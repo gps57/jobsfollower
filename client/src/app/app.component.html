@@ -1,0 +1,8 @@
+<!-- Interpolatin - how to get data from the Typescript component into the component's html template -->
+<!-- Interpolation is accomplished by using double curly braces {{dataVariableName}} -->
+
+<h1>{{title}}</h1>
+
+<ul>
+  <li *ngFor='let user of users'>{{user.id}} - {{user.userName}}</li>
+</ul>
