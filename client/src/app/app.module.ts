@@ -15,6 +15,7 @@ import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import {ToastrModule} from 'ngx-toastr';
+import { SharedModule } from './_modules/shared.module';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -34,10 +35,7 @@ import {ToastrModule} from 'ngx-toastr';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
-    })
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
