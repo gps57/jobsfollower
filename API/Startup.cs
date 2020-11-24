@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.Extensions;
 using API.Interfaces;
+using API.Middleware;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -46,12 +47,20 @@ namespace API
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-      if (env.IsDevelopment())
-      {
-        app.UseDeveloperExceptionPage();
-        app.UseSwagger();
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
-      }
+      // I commented this out because the udemy course I'm using created our own middleware that makes that check
+      // however, the middleware we created does nothing with Swagger.
+      // I kind of like Swagger for getting the API documentation.
+      // For now, I'm not sure how to use this new middleware and Swagger at the same time.
+      // I'll try to figure it out one day.
+      // if (env.IsDevelopment())
+      // {
+      //   app.UseDeveloperExceptionPage();
+      //   app.UseSwagger();
+      //   app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
+      // }
+
+      // the ExceptionMiddleware is what we created in the Udemy course.
+      app.UseMiddleware<ExceptionMiddleware>();
 
       app.UseHttpsRedirection();
 
