@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { HomeComponent } from './home/home.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { JobListComponent } from './jobs/job-list/job-list.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
       {path: 'messages', component: MessagesComponent},
     ]
   },
+  {path: 'errors', component: TestErrorsComponent},
   {path: '**', component: HomeComponent, pathMatch: 'full'}
 ];
 
