@@ -1,7 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using API.DTOs;
 using API.Entities;
 using API.Interfaces;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Data
@@ -9,9 +13,26 @@ namespace API.Data
   public class UserRepository : IUserRepository
   {
     private readonly DataContext _context;
-    public UserRepository(DataContext context)
+    private readonly IMapper _mapper;
+    public UserRepository(DataContext context, IMapper mapper)
     {
+      _mapper = mapper;
       _context = context;
+    }
+
+    public async Task<SeekerDto> GetSeekerAsync(string username)
+    {
+      return await _context.Users
+        .Where(x => x.UserName == username)
+        .ProjectTo<SeekerDto>(_mapper.ConfigurationProvider)
+        .SingleOrDefaultAsync();
+    }
+
+    public async Task<IEnumerable<SeekerDto>> GetSeekersAsync()
+    {
+      return await _context.Users
+        .ProjectTo<SeekerDto>(_mapper.ConfigurationProvider)
+        .ToListAsync();
     }
 
     public async Task<AppUser> GetUserByIdAsync(int id)
@@ -21,12 +42,18 @@ namespace API.Data
 
     public async Task<AppUser> GetUserByUsernameAsync(string username)
     {
-      return await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
+      return await _context.Users
+        .Include(p => p.Photos)
+        .Include(j => j.Jobs)
+        .SingleOrDefaultAsync(x => x.UserName == username);
     }
 
     public async Task<IEnumerable<AppUser>> GetUsersAsync()
     {
-      return await _context.Users.ToListAsync();
+      return await _context.Users
+        .Include(p => p.Photos)
+        .Include(j => j.Jobs)
+        .ToListAsync();
     }
 
     public async Task<bool> SaveAllAsync()
