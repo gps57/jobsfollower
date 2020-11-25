@@ -1,0 +1,35 @@
+[
+  {
+    "UserName": "Glen",
+    "DateOfBirth": "1957-11-25",
+    "KnownAs": "Glen",
+    "Created": "2020-11-25",
+    "LastActive": "2020-11-25",
+    "Photos": [
+      {
+        "Url": "https://randomuser.me/api/portraits/men/90.jpg",
+        "IsMain": true
+      }
+    ],
+    "Jobs": [
+      {
+        "Url": "https://www.indeed.com/viewjob?jk=aad5a59f8c59a251&q=.net+developer&l=Durham%2C+NC&tk=1ej3gpcu4s7ji800&from=web&vjs=3",
+        "Title": "Website Developer",
+        "Description": "Expected Skills: Able to work without assistance; can provide limited leadership to others; able to manage medium complexity work efforts; may have industry experience.",
+        "Company": "Staffing",
+        "Created": "2020-09-25",
+        "Notes": "10/13 - (410) 919-9440, this is the main office #. I suggest calling and asking to be connected with a recruiter who placed .NET developers. Hopefully you'll be able to have a conversation then but if not you can ask for an email to follow up directly. Happy to talk more about this",
+        "IsActive": true
+      },
+      {
+        "Url": "https://www.linkedin.com/jobs/view/2174522144/?eBP=NotAvailableFromMidTier&refId=8065d6a4-5d4a-44dc-ba26-98bb14ec40ea&trackingId=r6e84giiTd5%2B%2B7Uac5bXPg%3D%3D&trk=flagship3_search_srp_jobs",
+        "Title": ".Net Developer - Remote",
+        "Description": "Note: Candidate need's to Have Strong Insurance Domain Experience",
+        "Company": "Benvia",
+        "Created": "2020-10-12",
+        "Notes": "11/12 -MH: *go ahead and fill out app* I'm connected on LI to one of thier recruiters, messaged him directly w/ your portfolio, resume, and contact info for this role and other similar remote positions. //10/29 - unable to call, sent LI request and msg to internal tech recruiter. // 10/22 - sent intro email to HR, Resumes@Benvia.com",
+        "IsActive": true
+      }
+    ]
+  }
+]
