@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { User } from '../_models/user';
 
 @Injectable({
@@ -9,8 +10,8 @@ import { User } from '../_models/user';
 })
 export class AccountService {
   // this is the base url path to the api endpoints on the server
-  // TODO: don't forget to add the 's' to http when we turn on ssl security
-  baseUrl = 'https://localhost:5001/api/';
+  // It comes from either environment.prod.ts, or environment.ts, depending on whether you are in development mode or not.
+  baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
