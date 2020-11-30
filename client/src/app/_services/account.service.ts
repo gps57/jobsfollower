@@ -9,7 +9,7 @@ import { User } from '../_models/user';
   providedIn: 'root'
 })
 export class AccountService {
-  // this is the base url path to the api endpoints on the server
+  // this next line is the base url path to the api endpoints on the server
   // It comes from either environment.prod.ts, or environment.ts, depending on whether you are in development mode or not.
   baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<User>(1);
