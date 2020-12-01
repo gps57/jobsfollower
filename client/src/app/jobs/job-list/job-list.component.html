@@ -22,12 +22,12 @@
           </tr>
         </thead>
         <tbody *ngFor="let job of jobs">
-          <tr>
-            <td>{{job.created | date:'dd MMM yyyy'}}</td>
-            <td>{{job.title}}</td>
-            <td>{{job.company}}</td>
-            <td *ngIf="job.isActive"><i class="fa fa-check"></i></td>
-          </tr>
+            <tr routerLink='/jobs/{{job.id}}'>
+              <td>{{job.created | date:'dd MMM yyyy'}}</td>
+              <td>{{job.title}}</td>
+              <td>{{job.company}}</td>
+              <td *ngIf="job.isActive"><i class="fa fa-check"></i></td>
+            </tr>
         </tbody>
       </table>
     </div>
