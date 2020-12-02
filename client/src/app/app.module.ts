@@ -23,7 +23,6 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { JobAddComponent } from './jobs/job-add/job-add.component';
 import { JobEditComponent } from './jobs/job-edit/job-edit.component';
-import { JobsNavComponent } from './nav/jobs-nav/jobs-nav.component';
 import { JobsComponent } from './jobs/jobs/jobs.component';
 import { JobGridComponent } from './jobs/job-grid/job-grid.component';
 
@@ -43,7 +42,6 @@ import { JobGridComponent } from './jobs/job-grid/job-grid.component';
     ServerErrorComponent,
     JobAddComponent,
     JobEditComponent,
-    JobsNavComponent,
     JobsComponent,
     JobGridComponent
   ],
