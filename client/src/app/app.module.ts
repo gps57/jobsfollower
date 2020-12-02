@@ -21,6 +21,11 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { JobAddComponent } from './jobs/job-add/job-add.component';
+import { JobEditComponent } from './jobs/job-edit/job-edit.component';
+import { JobsNavComponent } from './nav/jobs-nav/jobs-nav.component';
+import { JobsComponent } from './jobs/jobs/jobs.component';
+import { JobGridComponent } from './jobs/job-grid/job-grid.component';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -35,7 +40,12 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     MessagesComponent,
     TestErrorsComponent,
     NotFoundComponent,
-    ServerErrorComponent
+    ServerErrorComponent,
+    JobAddComponent,
+    JobEditComponent,
+    JobsNavComponent,
+    JobsComponent,
+    JobGridComponent
   ],
   imports: [
     BrowserModule,

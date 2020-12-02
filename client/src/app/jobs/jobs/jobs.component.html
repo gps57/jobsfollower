@@ -1,0 +1,33 @@
+<div class="bs-docs-section">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-9">
+        <h1 id="jobslist">Jobs I'm Following</h1>
+      </div>
+      <div class="col-3 d-flex align-items-end justify-content-end">
+        <ul class="list-inline">
+          <li class="list-inline-item mr-3">
+            <a (click)="changeDisplay(true)">
+              <i class="fa fa-list-ul"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-4">
+            <a (click)="changeDisplay(false)">
+              <i class="fa fa-th"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div *ngIf="listDisplay">
+        <app-job-list></app-job-list>
+      </div>
+      <div *ngIf="!listDisplay">
+        <app-job-grid></app-job-grid>
+      </div>
+    </div>
+  </div>
+</div>
