@@ -1,16 +1,19 @@
 <div class="card mb-4">
   <div class="card-image-wrapper">
-
   </div>
+  <div class="card-header"><strong>{{job.title}}</strong></div>
   <div class="card-body p-1">
-    <span class="ml-2"><strong>Job Title:</strong></span>
-    <h6 class="card-title ml-3 mb-1"><i class="fa fa-user mr-2"></i>
-      {{job.title}}
-    </h6>
     <span class="ml-2"><strong>Company:</strong></span>
     <p class="card-text text-muted ml-3">{{job.company}}</p>
     <span class="ml-2"><strong>Tracking since:</strong></span>
     <p class="card-text text-muted ml-3">{{job.created | date:'dd MMM yyyy'}}</p>
-
+  </div>
+  <div class="card-footer">
+    <ul class="list-inline text-center">
+      <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-info"></i></button></li>
+      <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></li>
+      <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-external-link"></i></button></li>
+      <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-trash"></i></button></li>
+    </ul>
   </div>
 </div>
