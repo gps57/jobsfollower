@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { Job } from 'src/app/_models/job';
 import { JobsService } from 'src/app/_services/jobs.service';
 
@@ -10,7 +12,7 @@ import { JobsService } from 'src/app/_services/jobs.service';
 export class JobListComponent implements OnInit {
   jobs: Job[];
 
-  constructor(private jobService: JobsService) { }
+  constructor(private jobService: JobsService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadJobs();
@@ -20,6 +22,10 @@ export class JobListComponent implements OnInit {
     this.jobService.getJobs().subscribe(jobs => {
       this.jobs = jobs;
     })
+  }
+
+  jobDetails(id: number){
+    this.router.navigateByUrl('/jobs/' + id);
   }
 
 }

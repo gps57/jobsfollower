@@ -1,2 +1,6 @@
 <hr>
-<p>job-grid works!</p>
+<div class="row">
+  <div *ngFor="let job of jobs" class="col-3">
+    <app-job-card [job]="job"></app-job-card>
+  </div>
+</div>

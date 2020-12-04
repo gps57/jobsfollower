@@ -6,14 +6,28 @@
         <th scope="col">Title</th>
         <th scope="col">Company</th>
         <th scope="col">Active</th>
+        <th></th>
       </tr>
     </thead>
-    <tbody *ngFor="let job of jobs">
-      <tr routerLink='/jobs/{{job.id}}'>
-        <td>{{job.created | date:'dd MMM yyyy'}}</td>
-        <td>{{job.title}}</td>
-        <td>{{job.company}}</td>
-        <td *ngIf="job.isActive"><i class="fa fa-check"></i></td>
+    <tbody>
+      <tr *ngFor="let job of jobs"> 
+        <td (click)="jobDetails(job.id)">{{job.created | date:'dd MMM yyyy'}}</td>
+        <td (click)="jobDetails(job.id)">{{job.title}}</td>
+        <td (click)="jobDetails(job.id)">{{job.company}}</td>
+        <td (click)="jobDetails(job.id)" *ngIf="job.isActive"><i class="fa fa-check"></i></td>
+        <td>          
+          <div class="btn-group" dropdown>
+            <i dropdownToggle class="fa fa-ellipsis-h"></i>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+              <li role="menuitem"><a class="dropdown-item" href="#">Edit Job</a></li>
+              <li role="menuitem"><a class="dropdown-item" target="_blank" href='{{job.url}}'>Go to job post</a></li>
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Delete Job</a>
+              </li>
+            </ul>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

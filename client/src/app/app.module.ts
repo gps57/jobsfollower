@@ -25,6 +25,7 @@ import { JobAddComponent } from './jobs/job-add/job-add.component';
 import { JobEditComponent } from './jobs/job-edit/job-edit.component';
 import { JobsComponent } from './jobs/jobs/jobs.component';
 import { JobGridComponent } from './jobs/job-grid/job-grid.component';
+import { JobCardComponent } from './jobs/job-card/job-card.component';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -43,7 +44,8 @@ import { JobGridComponent } from './jobs/job-grid/job-grid.component';
     JobAddComponent,
     JobEditComponent,
     JobsComponent,
-    JobGridComponent
+    JobGridComponent,
+    JobCardComponent
   ],
   imports: [
     BrowserModule,
