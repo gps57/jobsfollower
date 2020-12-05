@@ -11,7 +11,8 @@
   <div class="card-footer">
     <ul class="list-inline text-center">
       <li class="list-inline-item">
-        <button type="button"
+        <button routerLink='/jobs/{{job.id}}'
+          type="button"
           class="btn btn-primary"
           data-toggle="tooltip"
           data-placement="top"
@@ -21,7 +22,8 @@
         </button>
       </li>
       <li class="list-inline-item">
-        <button type="button"
+        <button routerLink='/job/edit/{{job.id}}'
+          type="button"
           class="btn btn-primary"
           data-toggle="tooltip"
           data-placement="top"
@@ -31,18 +33,19 @@
         </button>
       </li>
       <li class="list-inline-item">
-        <button type="button"
-          class="btn btn-primary"
+        <a href={{job.url}}
+          class="button btn btn-primary"
           data-toggle="tooltip"
           data-placement="top"
           title="Job Post"
-          data-original-title="Job Post">
+          data-original-title="Job Post"
+          target="_blank">
           <i class="fa fa-external-link"></i>
-        </button>
+        </a>
       </li>
       <li class="list-inline-item">
         <button type="button"
-        class="btn btn-primary"
+        class="btn btn-danger ml-2"
         data-toggle="tooltip"
         data-placement="top"
         title="Delete"
