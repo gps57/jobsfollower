@@ -7,7 +7,7 @@
             <h2>Edit Job Profile</h2>
           </div>
           <div class="col-8 d-flex align-self-center">
-            <div class="alert alert-info text-center">
+            <div class="alert alert-info text-center" *ngIf="editForm.dirty">
               <strong>Information: </strong>You have made changes.  Any unsaved changes will be lost.
             </div>
           </div>
@@ -16,43 +16,43 @@
       <div class="card-body">
         <div class="row d-flex justify-content-center">
           <div class="col-3 d-flex align-self-center">
-            <strong>Added: </strong>{{job.created | date:'dd MMM yyyy'}}
+            <p class="nomargin"><strong>Job was added on: </strong>{{job.created | date:'dd MMM yyyy'}}</p>
           </div>
           <div class="col-3 d-flex align-self-center">
-            <strong>Applied: </strong>{{job.created | date:'dd MMM yyyy'}}
+            <p class="nomargin"><strong>You applied on: </strong>{{job.created | date:'dd MMM yyyy'}}</p>
           </div>
         </div>
         <hr>
-        <div class="form-group">
+        <form #editForm="ngForm" name="editForm" id="editForm" (ngSubmit)="updateJob()">
           <div class="row">
             <div class="col-6">
               <label for="jobTitleField" class="mr-2"><strong>Title:</strong></label>
-              <input type="text" class="form-control mr-5" id="jobTitleField" placeholder={{job.title}}>
+              <input type="text" class="form-control mr-5" id="jobTitleField" [(ngModel)]="job.title" name="title">
             </div>
             <div class="col-6">
               <label for="companyField" class="col-6 mr-2"><strong>Company:</strong></label>
-              <input type="text" class="form-control mb-3" id="companyField" placeholder={{job.company}}>
+              <input type="text" class="form-control mb-3" id="companyField" [(ngModel)]="job.company" name="company">
             </div>
           </div>
           <label for="urlField" ><strong>Posting Url:</strong></label>
-          <input type="text" class="form-control" id="urlField" placeholder={{job.url}}>
+          <input type="text" class="form-control" id="urlField" [(ngModel)]="job.url" name="url" >
 
           <div class="form-inline my-4">
-            <input type="checkbox" class="form-check-input" name="isActive" [(ngModel)]="job.isActive" id="activeCheckBox">
+            <input type="checkbox" class="form-control form-check-input" [(ngModel)]="job.isActive" name="isActive" id="activeCheckBox">
             <label class="form-check-label mr-5" for="customCheck1">Active?</label>
-            <input type="checkbox" class="form-check-input" name="isExpired" [(ngModel)]="isExpired" id="expiredCheckBox" checked="">
+            <input type="checkbox" class="form-control form-check-input" name="isExpired" [(ngModel)]="isExpired" name="isExpired" id="expiredCheckBox">
             <label class="form-check-label" for="customCheck1">Expired?</label>
           </div>
         
           <label for="descriptionField"><strong>Description:</strong></label>
-          <textarea [(ngModel)]="job.description" class="form-control" id="descriptionField" rows="5"></textarea>
-        </div>
+          <textarea [(ngModel)]="job.description" name="description" class="form-control" id="descriptionField" rows="5"></textarea>
+        </form>
       </div>
       <div class="card-footer">
         <div class="d-flex">
           <a class="button btn btn-primary mr-3" target="_blank" href={{job.url}}>Go To Job Posting</a>
           <button routerLink='/jobs' class="btn btn-secondary">Cancel</button>
-          <button class="ml-auto btn btn-success">Save Changes</button>
+          <button [disabled]="!editForm.dirty" form="editForm" class="ml-auto btn btn-success">Save Changes</button>
         </div>
       </div>
     </div>
