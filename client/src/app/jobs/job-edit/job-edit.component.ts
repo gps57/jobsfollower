@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -14,6 +14,11 @@ export class JobEditComponent implements OnInit {
   @ViewChild('editForm') editForm: NgForm;
   job: Job;
   isExpired: boolean = false; // TODO: this property needs to be added to the Job entity.
+  @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {
+    if (this.editForm.dirty) {
+      $event.returnValue = true;
+    }
+  }
 
   constructor(private jobService: JobsService, private route: ActivatedRoute, private toastr: ToastrService) { }
 

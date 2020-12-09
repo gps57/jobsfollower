@@ -12,6 +12,7 @@ import { JobsComponent } from './jobs/jobs/jobs.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,7 +24,7 @@ const routes: Routes = [
       {path: 'jobs', component: JobsComponent},
       {path: 'jobs/:id', component: JobDetailComponent},
       {path: 'job/add', component: JobAddComponent, pathMatch: 'full'},
-      {path: 'job/edit/:id', component: JobEditComponent, pathMatch: 'full'},
+      {path: 'job/edit/:id', component: JobEditComponent, canDeactivate: [PreventUnsavedChangesGuard], pathMatch: 'full'},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
     ]
