@@ -3,16 +3,15 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Job } from '../_models/job';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class JobsService {
   baseUrl = environment.apiUrl;
   jobs: Job[] = [];
+  jobsDisplayAsList: boolean = true;
 
   constructor(private http: HttpClient) { }
-
 
   getJobs() {
     return this.http.get<Job[]>(this.baseUrl + 'jobs');
@@ -26,6 +25,12 @@ export class JobsService {
     return this.http.put(this.baseUrl + 'jobs/update/' + job.id, job);
   }
 
+  displayJobsAsList(b: boolean) {
+    this.jobsDisplayAsList = b;
+  }
 
+  isDisplayList(): boolean {
+    return this.jobsDisplayAsList;
+  }
 
 }

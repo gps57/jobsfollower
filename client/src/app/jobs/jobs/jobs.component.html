@@ -7,12 +7,12 @@
       <div class="col-3 d-flex align-items-end justify-content-end">
         <ul class="list-inline">
           <li class="list-inline-item mr-3">
-            <a (click)="changeDisplay(true)">
+            <a (click)="displayAsList(true)">
               <i class="fa fa-list-ul"></i>
             </a>
           </li>
           <li class="list-inline-item mr-4">
-            <a (click)="changeDisplay(false)">
+            <a (click)="displayAsList(false)">
               <i class="fa fa-th"></i>
             </a>
           </li>
@@ -22,10 +22,10 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <div *ngIf="listDisplay">
+      <div *ngIf="isDisplayList()">
         <app-job-list></app-job-list>
       </div>
-      <div *ngIf="!listDisplay">
+      <div *ngIf="!isDisplayList()">
         <app-job-grid></app-job-grid>
       </div>
     </div>

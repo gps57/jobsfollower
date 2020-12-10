@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JobsService } from 'src/app/_services/jobs.service';
 
 @Component({
   selector: 'app-jobs',
@@ -6,15 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jobs.component.css']
 })
 export class JobsComponent implements OnInit {
-  listDisplay : boolean = true;
 
-  constructor() { }
+  constructor(private jobService: JobsService) { }
 
   ngOnInit(): void {
   }
 
-  changeDisplay (display: boolean) {
-    this.listDisplay = display;
+  displayAsList (b: boolean) {
+    this.jobService.displayJobsAsList(b);
+  }
+
+  isDisplayList(): boolean {
+    return this.jobService.isDisplayList();
   }
 
 }
