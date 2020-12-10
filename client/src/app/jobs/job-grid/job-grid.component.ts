@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Job } from 'src/app/_models/job';
 import { JobsService } from 'src/app/_services/jobs.service';
 
@@ -9,17 +10,11 @@ import { JobsService } from 'src/app/_services/jobs.service';
 })
 
 export class JobGridComponent implements OnInit {
-  jobs: Job[];
+  jobs$: Observable<Job[]>;
 
   constructor(private jobService: JobsService) { }
 
   ngOnInit(): void {
-    this.loadMembers();
-  }
-
-  loadMembers() {
-    this.jobService.getJobs().subscribe(jobs => {
-      this.jobs = jobs;
-    });
+    this.jobs$ = this.jobService.getJobs();
   }
 }

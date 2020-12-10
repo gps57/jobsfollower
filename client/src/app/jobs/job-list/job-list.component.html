@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let job of jobs"> 
+      <tr *ngFor="let job of jobs$ | async"> 
         <td (click)="jobDetails(job.id)">{{job.created | date:'dd MMM yyyy'}}</td>
         <td (click)="jobDetails(job.id)">{{job.title}}</td>
         <td (click)="jobDetails(job.id)">{{job.company}}</td>
