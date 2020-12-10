@@ -33,9 +33,10 @@ export class JobEditComponent implements OnInit {
   }
 
   updateJob() {
-    console.log(this.job);
-    this.toastr.success("Job profile updated successfully");
-    this.editForm.reset(this.job);
+    this.jobService.updateJob(this.job).subscribe(() => {
+      this.toastr.success("Job profile updated successfully");
+      this.editForm.reset(this.job);      
+    })
   }
 
 }

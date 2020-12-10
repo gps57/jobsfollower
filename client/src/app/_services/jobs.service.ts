@@ -9,6 +9,7 @@ import { Job } from '../_models/job';
 })
 export class JobsService {
   baseUrl = environment.apiUrl;
+  jobs: Job[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +21,11 @@ export class JobsService {
   getJob(jobId: number) {
     return this.http.get<Job>(this.baseUrl + 'jobs/' + jobId);
   }
+
+  updateJob(job: Job) {
+    return this.http.put(this.baseUrl + 'jobs/update/' + job.id, job);
+  }
+
+
 
 }

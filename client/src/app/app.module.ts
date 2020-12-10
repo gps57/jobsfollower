@@ -26,6 +26,8 @@ import { JobEditComponent } from './jobs/job-edit/job-edit.component';
 import { JobsComponent } from './jobs/jobs/jobs.component';
 import { JobGridComponent } from './jobs/job-grid/job-grid.component';
 import { JobCardComponent } from './jobs/job-card/job-card.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -53,11 +55,13 @@ import { JobCardComponent } from './jobs/job-card/job-card.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })
