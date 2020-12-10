@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
@@ -13,10 +14,10 @@ namespace API.Controllers
   {
     private readonly IMapper _mapper;
     private readonly IJobRepository _jobRepository;
-    public JobsController(IJobRepository jobRepository)
+    public JobsController(IJobRepository jobRepository, IMapper mapper)
     {
       _jobRepository = jobRepository;
-    //   _mapper = mapper;
+      _mapper = mapper;
     }
 
     [HttpGet]
@@ -29,7 +30,23 @@ namespace API.Controllers
     [HttpGet("{jobId}")]
     public async Task<ActionResult<JobDto>> GetJob(int jobId)
     {
-      return await _jobRepository.GetJobAsync(jobId);
+      return await _jobRepository.GetJobDtoAsync(jobId);
+    }
+
+    // How do I structure this?
+    // PUT: api/update/id
+    [HttpPut("update/{jobId}")]
+    public async Task<ActionResult> UpdateJob(JobUpdateDto jobUpdateDto, int jobId)
+    {
+      var job = await _jobRepository.GetJobAsync(jobId);
+
+      _mapper.Map(jobUpdateDto, job);
+
+      _jobRepository.Update(job);
+
+      if (await _jobRepository.SaveAllAsync()) return NoContent();
+
+      return BadRequest("Failed to update job profile.");
     }
 
   }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
+using API.Entities;
 using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
@@ -19,7 +20,7 @@ namespace API.Data
       _context = context;
     }
 
-    public async Task<JobDto> GetJobAsync(int jobId)
+    public async Task<JobDto> GetJobDtoAsync(int jobId)
     {
         var job = await _context.Jobs.FindAsync(jobId);
 
@@ -37,6 +38,16 @@ namespace API.Data
         return returnValue;
     }
 
+    public async Task<Job> GetJobAsync(int jobId)
+    {
+      return await _context.Jobs.FindAsync(jobId);
+    }
+
+    public async Task<bool> SaveAllAsync()
+    {
+      return await _context.SaveChangesAsync() > 0;
+    }    
+
     public async Task<IEnumerable<JobDto>> GetJobsAsync()
     {
         return await _context.Jobs
@@ -53,5 +64,11 @@ namespace API.Data
     {
       throw new System.NotImplementedException();
     }
+
+      public void Update(Job job)
+    {
+      _context.Entry(job).State = EntityState.Modified;
+    }
+
   }
 }
