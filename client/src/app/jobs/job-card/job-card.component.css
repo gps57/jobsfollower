@@ -3,6 +3,10 @@ ul.list-inline.text-center {
 }
 
 div.card-header {
-  overflow:hidden;
   white-space: nowrap;
+}
+
+div.job-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
