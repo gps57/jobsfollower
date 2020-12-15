@@ -1,1 +1,53 @@
-<p>job-add works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card border-primary mb-3">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-4">
+            <h2>Add New Job</h2>
+          </div>
+          <div class="col-8 d-flex align-self-center">
+            <div class="alert alert-info text-center">
+              <strong>Information: </strong>You have made changes.  Any unsaved changes will be lost.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form #addForm="ngForm" name="addForm" id="addForm" (ngSubmit)="addJob()">
+          <div class="row">
+            <div class="col-6">
+              <label for="jobTitleField" class="ml-2"><strong>Job Title:</strong></label>
+              <input type="text" class="form-control mr-5" id="jobTitleField" placeholder="Job Title">
+            </div>
+            <div class="col-6">
+              <label for="companyField" class="ml-2"><strong>Company offering position:</strong></label>
+              <input type="text" class="form-control mb-3" id="companyField" placeholder="Company">
+            </div>
+          </div>
+          <label for="urlField" ><strong>Posting Url:</strong></label>
+          <input type="text" class="form-control" id="urlField" placeholder="Posting URL">
+
+          <div class="border rounded justify-content-center form-inline my-4">
+            <input type="checkbox" class="form-control form-check-input" id="activeCheckBox">
+            <label class="form-check-label mr-5" for="activeCheckBox">Active?</label>
+            <input type="checkbox" class="form-control form-check-input" id="appliedCheckBox">
+            <label class="form-check-label mr-5" for="appliedCheckBox">Applied?</label>
+            <input type="checkbox" class="form-control form-check-input" id="expiredCheckBox">
+            <label class="form-check-label" for="expiredCheckBox">Expired?</label>
+          </div>
+        
+          <label for="descriptionField"><strong>Description:</strong></label>
+          <textarea placeholder="Job Description" name="description" class="form-control" id="descriptionField" rows="5"></textarea>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex">
+          <button form="addForm" class="btn btn-success mr-3">Add Job</button>
+          <button routerLink='/jobs' class="btn btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

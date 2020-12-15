@@ -14,6 +14,7 @@ namespace API.Helpers
                 dest => dest.PhotoUrl, opt => opt.MapFrom(
                     src => src.Photos.FirstOrDefault(x => x.IsMain).Url));
         CreateMap<Photo, PhotoDto>();
+        CreateMap<SeekerUpdateDto, AppUser>();
         CreateMap<Job, JobDto>();
         CreateMap<JobUpdateDto, Job>();
     }

@@ -42,6 +42,10 @@ export class JobsService {
     )
   }
 
+  addJob(job: Job) {
+    
+  }
+
   displayJobsAsList(b: boolean) {
     this.jobsDisplayAsList = b;
   }

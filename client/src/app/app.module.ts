@@ -28,6 +28,7 @@ import { JobGridComponent } from './jobs/job-grid/job-grid.component';
 import { JobCardComponent } from './jobs/job-card/job-card.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { SeekerListComponent } from './seekers/seeker-list/seeker-list.component';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -47,7 +48,8 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
     JobEditComponent,
     JobsComponent,
     JobGridComponent,
-    JobCardComponent
+    JobCardComponent,
+    SeekerListComponent
   ],
   imports: [
     BrowserModule,

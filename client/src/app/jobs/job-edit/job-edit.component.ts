@@ -14,6 +14,8 @@ export class JobEditComponent implements OnInit {
   @ViewChild('editForm') editForm: NgForm;
   job: Job;
   isExpired: boolean = false; // TODO: this property needs to be added to the Job entity.
+  
+  // this next line sets up warnings to user if they change something then navigate from the page without saving
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {
     if (this.editForm.dirty) {
       $event.returnValue = true;

@@ -65,10 +65,9 @@ namespace API.Data
       throw new System.NotImplementedException();
     }
 
-      public void Update(Job job)
+    public void Update(Job job)
     {
       _context.Entry(job).State = EntityState.Modified;
     }
-
   }
 }

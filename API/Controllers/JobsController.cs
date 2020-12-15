@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
+using API.Entities;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -14,6 +16,7 @@ namespace API.Controllers
   {
     private readonly IMapper _mapper;
     private readonly IJobRepository _jobRepository;
+
     public JobsController(IJobRepository jobRepository, IMapper mapper)
     {
       _jobRepository = jobRepository;

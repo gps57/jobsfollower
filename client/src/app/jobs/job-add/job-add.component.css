@@ -1,0 +1,13 @@
+div.alert.alert-info {
+  margin: 0px;
+  padding: 5px 20px;
+}
+
+hr {
+  border: 3px solid;
+  border-radius: 3px;
+}
+
+.nomargin {
+  margin: 0px;
+}
