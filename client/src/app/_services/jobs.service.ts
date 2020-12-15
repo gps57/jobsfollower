@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Job } from '../_models/job';
 
@@ -43,7 +43,13 @@ export class JobsService {
   }
 
   addJob(job: Job) {
-    
+    return this.http.post(this.baseUrl + 'users/add-job', job).pipe(
+      tap(x => {
+        console.log(x);
+        this.jobs.push(x);
+        console.log(this.jobs);
+      })
+    )    
   }
 
   displayJobsAsList(b: boolean) {

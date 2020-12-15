@@ -13,20 +13,20 @@
           </div>
         </div>
       </div>
-      <div class="card-body">
+      <div class="card-body" *ngIf="job">
         <form #addForm="ngForm" name="addForm" id="addForm" (ngSubmit)="addJob()">
           <div class="row">
             <div class="col-6">
               <label for="jobTitleField" class="ml-2"><strong>Job Title:</strong></label>
-              <input type="text" class="form-control mr-5" id="jobTitleField" placeholder="Job Title">
+              <input type="text" class="form-control mr-5" id="jobTitleField" placeholder="Job Title" [(ngModel)]="job.title" name="title">
             </div>
             <div class="col-6">
               <label for="companyField" class="ml-2"><strong>Company offering position:</strong></label>
-              <input type="text" class="form-control mb-3" id="companyField" placeholder="Company">
+              <input type="text" class="form-control mb-3" id="companyField" placeholder="Company" [(ngModel)]="job.company" name="company">
             </div>
           </div>
           <label for="urlField" ><strong>Posting Url:</strong></label>
-          <input type="text" class="form-control" id="urlField" placeholder="Posting URL">
+          <input type="text" class="form-control" id="urlField" placeholder="Posting URL"[(ngModel)]="job.url" name="url">
 
           <div class="border rounded justify-content-center form-inline my-4">
             <input type="checkbox" class="form-control form-check-input" id="activeCheckBox">
@@ -38,7 +38,7 @@
           </div>
         
           <label for="descriptionField"><strong>Description:</strong></label>
-          <textarea placeholder="Job Description" name="description" class="form-control" id="descriptionField" rows="5"></textarea>
+          <textarea placeholder="Job Description" [(ngModel)]="job.description" name="description" class="form-control" id="descriptionField" rows="5"></textarea>
         </form>
       </div>
       <div class="card-footer">

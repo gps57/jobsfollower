@@ -1,3 +1,8 @@
 ul.list-inline.text-center {
   margin: 0px;
 }
+
+div.card-header {
+  overflow:hidden;
+  white-space: nowrap;
+}
