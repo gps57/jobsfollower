@@ -110,12 +110,23 @@ namespace API.Controllers
       return BadRequest("Problem adding job.");
 
     }
+    [HttpPut("set-main-photo/{photoId}")]
+    public async Task<ActionResult> SetMainPhoto(int photoId)
+    {
+      var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 
-    // [HttpPut]
-    // public async Task<ActionResult> UpdateUser(SeekerUpdateDto seekerUpdateDto)
-    // {
-    //   var username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    // }
+      var photo = user.Photos.FirstOrDefault(x => x.Id == photoId);
+      
+      if (photo.IsMain) return BadRequest("This is already your main photo");
+
+      var currentMain = user.Photos.FirstOrDefault(x => x.IsMain);
+      if (currentMain != null) currentMain.IsMain = false;
+      photo.IsMain = true;
+
+      if (await _userRepository.SaveAllAsync()) return NoContent();
+
+      return BadRequest("Failed to set main photo");
+    }
 
   }
 }
