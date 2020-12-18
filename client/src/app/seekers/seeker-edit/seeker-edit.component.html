@@ -1,0 +1,18 @@
+<div class="row" *ngIf="seeker">
+  <div class="col-4">
+      <h1>Your profile</h1>
+  </div>
+  <div class="col-8">
+      <div class="alert alert-info" *ngIf="editForm.dirty">
+          <strong>Information: </strong> You have made changes.  Any unsaved changes will be lost
+      </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <form #editForm="ngForm" id="editForm">
+
+      </form>
+      <app-photo-editor [seeker]="seeker"></app-photo-editor>
+    </div>
+  </div>
+</div>
