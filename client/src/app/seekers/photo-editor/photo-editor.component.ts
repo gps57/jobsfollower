@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 import { take } from 'rxjs/operators';
+import { Photo } from 'src/app/_models/photo';
 import { Seeker } from 'src/app/_models/seeker';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
+import { SeekersService } from 'src/app/_services/seekers.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -18,7 +20,7 @@ export class PhotoEditorComponent implements OnInit {
   baseUrl = environment.apiUrl;
   user: User;
 
-  constructor(private accountService: AccountService) {
+  constructor(private accountService: AccountService, private seekerService: SeekersService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
   }
 
@@ -28,6 +30,24 @@ export class PhotoEditorComponent implements OnInit {
 
   fileOverBase(e: any) {
     this.hasBaseDropzoneOver = e;
+  }
+
+  setMainPhoto(photo: Photo) {
+    this.seekerService.setMainPhoto(photo.id).subscribe(() => {
+      this.user.photoUrl = photo.url;
+      this.accountService.setCurrentUser(this.user);
+      this.seeker.photoUrl = photo.url;
+      this.seeker.photos.forEach(p => {
+        if(p.isMain) p.isMain = false;
+        if(p.id === photo.id) p.isMain = true;
+      })
+    })
+  }
+
+  deletePhoto(photoId: number) {
+    this.seekerService.deletePhoto(photoId).subscribe(() => {
+      this.seeker.photos = this.seeker.photos.filter(x => x.id !== photoId);
+    })
   }
 
   initializeUploader() {
