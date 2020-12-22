@@ -7,7 +7,19 @@
           <strong>Information: </strong> You have made changes.  Any unsaved changes will be lost
       </div>
   </div>
-  <div class="col-12">
+  <div class="col-4">
+    <div class="card">
+      <img src="{{seeker.photoUrl || './assets/user.png'}}" alt="{{seeker.knownAs}}" 
+                class="card-img-top img-thumbnail">
+    </div>
+    <div class="card-body">
+      <div>
+        <strong>Name</strong>
+        <p>{{seeker.knownAs}}</p>
+    </div>
+    </div>
+  </div>
+  <div class="col-8">
     <div class="card">
       <form #editForm="ngForm" id="editForm">
 
