@@ -6,15 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { JobListComponent } from './jobs/job-list/job-list.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import {ToastrModule} from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -31,6 +29,7 @@ import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { SeekerListComponent } from './seekers/seeker-list/seeker-list.component';
 import { PhotoEditorComponent } from './seekers/photo-editor/photo-editor.component';
 import { SeekerEditComponent } from './seekers/seeker-edit/seeker-edit.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -53,7 +52,8 @@ import { SeekerEditComponent } from './seekers/seeker-edit/seeker-edit.component
     JobCardComponent,
     SeekerListComponent,
     PhotoEditorComponent,
-    SeekerEditComponent
+    SeekerEditComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +61,7 @@ import { SeekerEditComponent } from './seekers/seeker-edit/seeker-edit.component
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     NgxSpinnerModule
   ],
