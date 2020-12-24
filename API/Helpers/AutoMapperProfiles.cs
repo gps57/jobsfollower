@@ -17,6 +17,7 @@ namespace API.Helpers
         CreateMap<SeekerUpdateDto, AppUser>();
         CreateMap<Job, JobDto>();
         CreateMap<JobUpdateDto, Job>();
+        CreateMap<RegisterDto, AppUser>();
     }
   }
 }
