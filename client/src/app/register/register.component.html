@@ -21,7 +21,7 @@
       </div>
 
       <div class="col-8">
-        <form [formGroup]='registerForm' (ngSubmit)="register()" autocomplete="off">
+        <form [formGroup]='registerForm' (ngSubmit)="registerForm.valid && register()" autocomplete="off">
           <strong>Your Name</strong>
           <app-text-input [formControl]='registerForm.controls["firstName"]' [label]='"First Name"'>
           </app-text-input>
@@ -39,22 +39,16 @@
             [type]='"password"'>
           </app-text-input>
 
-          <!-- <app-text-input [formControl]='registerForm.controls["dateOfBirth"]' [label]='"Date Of Birth"'>
-          </app-text-input>
-
-          <app-text-input [formControl]='registerForm.controls["city"]' [label]='"City"'>
-          </app-text-input>
-
-          <app-text-input [formControl]='registerForm.controls["state"]' [label]='"State"'>
-          </app-text-input>
-
-          <app-text-input [formControl]='registerForm.controls["zip"]' [label]='"Zip Code"'>
-          </app-text-input> -->
-
-
+          <div class="row" *ngIf="validationErrors.length > 0">
+            <ul class="text-danger">
+              <li *ngFor="let error of validationErrors">
+                {{error}}
+              </li>
+            </ul>
+          </div>
 
           <div class="form-group text-center">
-            <button class="btn btn-success mr-2" type="submit">Create Your Account</button>
+            <button [disabled]='!registerForm.valid' class="btn btn-success mr-2" type="submit">Create Your Account</button>
             <button class="btn btn-default mr-2" (click)="cancel()" type="button">Cancel</button>
           </div>
         </form>
@@ -63,6 +57,3 @@
 
   </div>
 </div>
-
-<p>Form value: {{registerForm.value | json}}</p>
-<p>Form status: {{registerForm.status | json}}</p>
