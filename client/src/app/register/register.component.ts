@@ -45,6 +45,8 @@ export class RegisterComponent implements OnInit {
     this.accountService.register(this.registerForm.value).subscribe(response => {
       // When they register, you might asume they want to add a job that they want to follow
       // so take them to the Add Job form.
+      // Another option would be to take them to the 'seeker/edit' route so they can add an image
+      // or any other user information they might want add that is not added during registration.
       this.router.navigateByUrl('job/add'); 
     }, error => {
       this.validationErrors = error;
