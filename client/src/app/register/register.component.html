@@ -1,47 +1,68 @@
-<form [formGroup]='registerForm' (ngSubmit)="register()" autocomplete="off">
-  <h2 class="text-center text-primary">Sign up</h2>
-  <hr>
-  <app-text-input [formControl]='registerForm.controls["username"]'
-    [label]='"Username"'>
-  </app-text-input>
+<div class="card">
+  <div class="card-header"><h2>Create Your Account</h2></div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-4">
+        <h3 class="card-title text-center text-primary mb-2">Sign up</h3>
+        <h5 class="card-subtitle text-center">Control your job search</h5>
+        <hr>
+        <div class="card-text mt-3">
+          <p>
+          Signing up for a JobsFollower account is fast, easy and free.
+          Plus, it gives you access to some great tools to control your job search.
+          How many jobs have you applied for?  What is the current status of each one? 
+          What is the next step? 
+          All this information, at your fingertips.
+          </p>
+          <p>
+            Already have an account?  Sign in by entering your username and password in the navigation bar above.
+          </p>
+        </div>
+      </div>
 
-  <app-text-input [formControl]='registerForm.controls["firstName"]'
-    [label]='"First Name"'>
-  </app-text-input>
+      <div class="col-8">
+        <form [formGroup]='registerForm' (ngSubmit)="register()" autocomplete="off">
+          <strong>Your Name</strong>
+          <app-text-input [formControl]='registerForm.controls["firstName"]' [label]='"First Name"'>
+          </app-text-input>
+          <app-text-input [formControl]='registerForm.controls["lastName"]' [label]='"Last Name"'>
+          </app-text-input>
 
-  <app-text-input [formControl]='registerForm.controls["lastName"]'
-    [label]='"Last Name"'>
-  </app-text-input>
+          <strong>Your Username</strong>
+          <app-text-input [formControl]='registerForm.controls["username"]' [label]='"Username"'>
+          </app-text-input>
 
-  <app-text-input [formControl]='registerForm.controls["dateOfBirth"]'
-    [label]='"Date Of Birth"'>
-  </app-text-input>
+          <strong>Password</strong>
+          <app-text-input [formControl]='registerForm.controls["password"]' [label]='"Password"' [type]='"password"'>
+          </app-text-input>
+          <app-text-input [formControl]='registerForm.controls["confirmPassword"]' [label]='"Confirm Password"'
+            [type]='"password"'>
+          </app-text-input>
 
-  <app-text-input [formControl]='registerForm.controls["city"]'
-    [label]='"City"'>
-  </app-text-input>
+          <!-- <app-text-input [formControl]='registerForm.controls["dateOfBirth"]' [label]='"Date Of Birth"'>
+          </app-text-input>
 
-  <app-text-input [formControl]='registerForm.controls["state"]'
-    [label]='"State"'>
-  </app-text-input>
+          <app-text-input [formControl]='registerForm.controls["city"]' [label]='"City"'>
+          </app-text-input>
 
-  <app-text-input [formControl]='registerForm.controls["zip"]'
-    [label]='"Zip Code"'>
-  </app-text-input>
+          <app-text-input [formControl]='registerForm.controls["state"]' [label]='"State"'>
+          </app-text-input>
 
-  <app-text-input [formControl]='registerForm.controls["password"]'
-    [label]='"Password"' [type]='"password"'>
-  </app-text-input>
+          <app-text-input [formControl]='registerForm.controls["zip"]' [label]='"Zip Code"'>
+          </app-text-input> -->
 
-  <app-text-input [formControl]='registerForm.controls["confirmPassword"]'
-    [label]='"Confirm Password"' [type]='"password"'>
-  </app-text-input>
 
-  <div class="form-group text-center">
-    <button class="btn btn-success mr-2" type="submit">Register</button>
-    <button class="btn btn-default mr-2" (click)="cancel()" type="button">Cancel</button>
+
+          <div class="form-group text-center">
+            <button class="btn btn-success mr-2" type="submit">Create Your Account</button>
+            <button class="btn btn-default mr-2" (click)="cancel()" type="button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
   </div>
-</form>
+</div>
 
 <p>Form value: {{registerForm.value | json}}</p>
 <p>Form status: {{registerForm.status | json}}</p>
