@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Job } from '../_models/job';
+import { PaginatedResult } from '../_models/pagination';
 
 @Injectable({
   providedIn: 'root'
@@ -11,18 +12,26 @@ import { Job } from '../_models/job';
 export class JobsService {
   baseUrl = environment.apiUrl;
   jobs: Job[] = [];
+  paginatedResult: PaginatedResult<Job[]> = new PaginatedResult<Job[]>();
   jobsDisplayAsList: boolean = true;
 
   constructor(private http: HttpClient) { }
 
-  getJobs() {
-    // the of() thing make the return value an Observable which is what the component expects
-    if (this.jobs.length > 0) return of(this.jobs);
+  getJobs(page?: number, itemsPerPage?: number) {
+    let params = new HttpParams();
 
-    return this.http.get<Job[]>(this.baseUrl + 'jobs').pipe(
-      map(jobs => {
-        this.jobs = jobs;
-        return jobs;
+    if (page !== null && itemsPerPage !== null) {
+      params = params.append('pageNumber', page.toString());
+      params = params.append('pageSize', itemsPerPage.toString());
+    }
+
+    return this.http.get<Job[]>(this.baseUrl + 'jobs', {observe: 'response', params}).pipe(
+      map(response => {
+        this.paginatedResult.result = response.body;
+        if (response.headers.get('Pagination') !== null) {
+          this.paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
+        }
+        return this.paginatedResult;
       })
     )
   }
