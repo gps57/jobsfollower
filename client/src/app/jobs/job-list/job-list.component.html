@@ -14,7 +14,10 @@
         <td (click)="jobDetails(job.id)">{{job.created | date:'dd MMM yyyy'}}</td>
         <td (click)="jobDetails(job.id)">{{job.title}}</td>
         <td (click)="jobDetails(job.id)">{{job.company}}</td>
-        <td (click)="jobDetails(job.id)" *ngIf="job.isActive"><i class="fa fa-check"></i></td>
+        <td (click)="jobDetails(job.id)">
+          <div *ngIf="job.isActive"><i class="fa fa-check"></i></div>
+          <div *ngIf="!job.isActive"><!--Emtpy Cell--></div>
+        </td>
         <td>          
           <div class="btn-group" dropdown>
             <i dropdownToggle class="fa fa-ellipsis-h"></i>
