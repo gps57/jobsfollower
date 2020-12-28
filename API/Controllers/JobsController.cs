@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Extensions;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -24,9 +26,12 @@ namespace API.Controllers
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<JobDto>>> GetJobs()
+    public async Task<ActionResult<IEnumerable<JobDto>>> GetJobs([FromQuery]JobParams jobParams)
     {
-        var jobs = await _jobRepository.GetJobsAsync();
+        var jobs = await _jobRepository.GetJobsAsync(jobParams);
+
+        Response.AddPaginationHeader(jobs.CurrentPage, jobs.PageSize, jobs.TotalCount, jobs.TotalPages);
+
         return Ok(jobs);
     }
 

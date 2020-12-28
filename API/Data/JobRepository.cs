@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
+using API.Helpers;
 using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
@@ -48,11 +49,13 @@ namespace API.Data
       return await _context.SaveChangesAsync() > 0;
     }    
 
-    public async Task<IEnumerable<JobDto>> GetJobsAsync()
+    public async Task<PagedList<JobDto>> GetJobsAsync(JobParams jobParams)
     {
-        return await _context.Jobs
+        var query = _context.Jobs
         .ProjectTo<JobDto>(_mapper.ConfigurationProvider)
-        .ToListAsync();
+        .AsNoTracking();
+
+        return await PagedList<JobDto>.CreateAsync(query, jobParams.PageNumber, jobParams.PageSize);
     }
 
     public Task<JobDto> GetUserJobAsync(string username, int jobId)
@@ -60,7 +63,7 @@ namespace API.Data
       throw new System.NotImplementedException();
     }
 
-    public Task<IEnumerable<JobDto>> GetUserJobsAsync(string username)
+    public Task<PagedList<JobDto>> GetUserJobsAsync(string username)
     {
       throw new System.NotImplementedException();
     }
