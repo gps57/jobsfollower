@@ -14,7 +14,7 @@ export class JobGridComponent implements OnInit {
   jobs: Job[];
   pagination: Pagination;
   pageNumber = 1;
-  pageSize = 5;
+  pageSize = 4;
 
   constructor(private jobService: JobsService) { }
 
@@ -27,6 +27,11 @@ export class JobGridComponent implements OnInit {
       this.jobs = response.result;
       this.pagination = response.pagination;
     })
+  }
+
+  pageChanged(event: any) {
+    this.pageNumber = event.page;
+    this.loadJobs();
   }
 
 }

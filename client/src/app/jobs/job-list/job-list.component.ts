@@ -34,4 +34,9 @@ export class JobListComponent implements OnInit {
     this.router.navigateByUrl('/jobs/' + id);
   }
 
+  pageChanged(event: any) {
+    this.pageNumber = event.page;
+    this.loadJobs();
+  }
+
 }
