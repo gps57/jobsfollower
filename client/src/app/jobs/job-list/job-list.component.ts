@@ -1,3 +1,4 @@
+import { createDirective } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -18,6 +19,7 @@ export class JobListComponent implements OnInit {
   pagination: Pagination;
   jobParams: JobParams;
   pageSize = environment.defaultListPageSize;
+  sortByList = [{value: 'created', display: 'Created Date'}, {value: 'title', display: 'Job Title'}, {value: 'company', display: 'Company'}];
 
   constructor(private jobService: JobsService, private router: Router) {
     this.jobParams = new JobParams(this.pageSize);

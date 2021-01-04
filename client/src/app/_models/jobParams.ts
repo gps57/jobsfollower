@@ -3,6 +3,7 @@ export class JobParams {
   title: string;
   pageNumber = 1;
   pageSize = 5;
+  orderBy = "created";
 
   constructor(pageSize: number) {
     this.pageSize = pageSize;

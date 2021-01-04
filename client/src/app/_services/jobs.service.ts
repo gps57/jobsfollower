@@ -29,6 +29,8 @@ export class JobsService {
       params = params.append('title', jobParams.title.toString());
     }
 
+    params = params.append('orderBy', jobParams.orderBy);
+
     return this.getPaginatedResult<Job[]>(this.baseUrl + 'jobs', params);
   }
 
