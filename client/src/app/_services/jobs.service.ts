@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { JobAddComponent } from '../jobs/job-add/job-add.component';
 import { Job } from '../_models/job';
+import { JobParams } from '../_models/jobParams';
 import { PaginatedResult } from '../_models/pagination';
 
 @Injectable({
@@ -12,28 +14,22 @@ import { PaginatedResult } from '../_models/pagination';
 export class JobsService {
   baseUrl = environment.apiUrl;
   jobs: Job[] = [];
-  paginatedResult: PaginatedResult<Job[]> = new PaginatedResult<Job[]>();
   jobsDisplayAsList: boolean = true;
 
   constructor(private http: HttpClient) { }
 
-  getJobs(page?: number, itemsPerPage?: number) {
-    let params = new HttpParams();
+  getJobs(jobParams: JobParams) {
+    let params = this.getPaginationHeaders(jobParams.pageNumber, jobParams.pageSize);
 
-    if (page !== null && itemsPerPage !== null) {
-      params = params.append('pageNumber', page.toString());
-      params = params.append('pageSize', itemsPerPage.toString());
+    if (jobParams.company != null){
+      params = params.append('company', jobParams.company.toString());
     }
 
-    return this.http.get<Job[]>(this.baseUrl + 'jobs', {observe: 'response', params}).pipe(
-      map(response => {
-        this.paginatedResult.result = response.body;
-        if (response.headers.get('Pagination') !== null) {
-          this.paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
-        }
-        return this.paginatedResult;
-      })
-    )
+    if (jobParams.title != null) {
+      params = params.append('title', jobParams.title.toString());
+    }
+
+    return this.getPaginatedResult<Job[]>(this.baseUrl + 'jobs', params);
   }
 
   getJob(jobId: number) {
@@ -69,4 +65,27 @@ export class JobsService {
     return this.jobsDisplayAsList;
   }
 
+  private getPaginatedResult<T>(url: string, params: HttpParams) {
+    const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>();
+
+    return this.http.get<T>(url, { observe: 'response', params }).pipe(
+      map(response => {
+        paginatedResult.result = response.body;
+        if (response.headers.get('Pagination') !== null) {
+          paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
+        }
+        return paginatedResult;
+      })
+    );
+  }
+
+  private getPaginationHeaders (pageNumber: number, pageSize: number) {
+    let params = new HttpParams();
+
+    params = params.append('pageNumber', pageNumber.toString());
+    params = params.append('pageSize', pageSize.toString());
+
+    return params;
+  }
 }
+

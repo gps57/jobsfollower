@@ -3,8 +3,10 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { Job } from 'src/app/_models/job';
+import { JobParams } from 'src/app/_models/jobParams';
 import { Pagination } from 'src/app/_models/pagination';
 import { JobsService } from 'src/app/_services/jobs.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-job-list',
@@ -14,20 +16,27 @@ import { JobsService } from 'src/app/_services/jobs.service';
 export class JobListComponent implements OnInit {
   jobs: Job[];
   pagination: Pagination;
-  pageNumber = 1;
-  pageSize = 5;
+  jobParams: JobParams;
+  pageSize = environment.defaultListPageSize;
 
-  constructor(private jobService: JobsService, private router: Router) { }
+  constructor(private jobService: JobsService, private router: Router) {
+    this.jobParams = new JobParams(this.pageSize);
+  }
 
   ngOnInit(): void {
     this.loadJobs();
   }
 
   loadJobs() {
-    this.jobService.getJobs(this.pageNumber, this.pageSize).subscribe(response => {
+    this.jobService.getJobs(this.jobParams).subscribe(response => {
       this.jobs = response.result;
       this.pagination = response.pagination;
     })
+  }
+
+  resetFilters() {
+    this.jobParams = new JobParams(this.pageSize);
+    this.loadJobs();
   }
 
   jobDetails(id: number){
@@ -35,7 +44,7 @@ export class JobListComponent implements OnInit {
   }
 
   pageChanged(event: any) {
-    this.pageNumber = event.page;
+    this.jobParams.pageNumber = event.page;
     this.loadJobs();
   }
 

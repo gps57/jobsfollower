@@ -51,11 +51,34 @@ namespace API.Data
 
     public async Task<PagedList<JobDto>> GetJobsAsync(JobParams jobParams)
     {
-        var query = _context.Jobs
-        .ProjectTo<JobDto>(_mapper.ConfigurationProvider)
-        .AsNoTracking();
+        // get all the jobs first
+        var query = _context.Jobs.AsQueryable();
 
-        return await PagedList<JobDto>.CreateAsync(query, jobParams.PageNumber, jobParams.PageSize);
+        // now filter it to the specific company being requested, if there is one.
+        if (!string.IsNullOrEmpty(jobParams.Company))
+        {
+          query = query.Where(c => c.Company.ToLower().IndexOf(jobParams.Company.ToLower()) != -1);
+        }
+
+        // now filter it to job titles containing the user filter if there is one.
+        if (!string.IsNullOrEmpty(jobParams.Title))
+        {
+          query = query.Where(t => t.Title.ToLower().IndexOf(jobParams.Title.ToLower()) != -1);
+        }
+
+        query = jobParams.OrderBy switch
+        {
+          "company" => query.OrderBy(u => u.Company),
+          "title" => query.OrderBy(u => u.Title),
+          _ => query.OrderBy(u => u.Created)
+        };
+
+        return await PagedList<JobDto>.CreateAsync
+        (
+          query.ProjectTo<JobDto>(_mapper.ConfigurationProvider).AsNoTracking(),
+          jobParams.PageNumber,
+          jobParams.PageSize
+        );
     }
 
     public Task<JobDto> GetUserJobAsync(string username, int jobId)
