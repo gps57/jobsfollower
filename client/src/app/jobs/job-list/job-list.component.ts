@@ -22,7 +22,7 @@ export class JobListComponent implements OnInit {
   sortByList = [{value: 'created', display: 'Created Date'}, {value: 'title', display: 'Job Title'}, {value: 'company', display: 'Company'}];
 
   constructor(private jobService: JobsService, private router: Router) {
-    this.jobParams = new JobParams(this.pageSize);
+    this.jobParams = this.jobService.getJobParams();
   }
 
   ngOnInit(): void {
@@ -30,6 +30,7 @@ export class JobListComponent implements OnInit {
   }
 
   loadJobs() {
+    this.jobService.setJobParams(this.jobParams);
     this.jobService.getJobs(this.jobParams).subscribe(response => {
       this.jobs = response.result;
       this.pagination = response.pagination;
@@ -37,7 +38,7 @@ export class JobListComponent implements OnInit {
   }
 
   resetFilters() {
-    this.jobParams = new JobParams(this.pageSize);
+    this.jobParams = this.jobService.resetJobParams();
     this.loadJobs();
   }
 
@@ -47,6 +48,7 @@ export class JobListComponent implements OnInit {
 
   pageChanged(event: any) {
     this.jobParams.pageNumber = event.page;
+    this.jobService.setJobParams(this.jobParams);
     this.loadJobs();
   }
 

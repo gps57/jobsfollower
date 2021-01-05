@@ -13,12 +13,36 @@ import { PaginatedResult } from '../_models/pagination';
 })
 export class JobsService {
   baseUrl = environment.apiUrl;
+  pageSize = environment.defaultListPageSize;
   jobs: Job[] = [];
+  jobParams: JobParams;
+  jobCache = new Map();
   jobsDisplayAsList: boolean = true;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.jobParams = new JobParams(this.pageSize);
+  }
+
+  getJobParams() {
+    return this.jobParams;
+  }
+
+  setJobParams(params: JobParams) {
+    this.jobParams = params;
+  }
+
+  resetJobParams() {
+    this.jobParams = new JobParams(this.pageSize);
+    return this.jobParams;
+  }
 
   getJobs(jobParams: JobParams) {
+    var response = this.jobCache.get(Object.values(jobParams).join('-'));
+
+    if(response) {
+      return of(response);
+    }
+
     let params = this.getPaginationHeaders(jobParams.pageNumber, jobParams.pageSize);
 
     if (jobParams.company != null){
@@ -31,12 +55,22 @@ export class JobsService {
 
     params = params.append('orderBy', jobParams.orderBy);
 
-    return this.getPaginatedResult<Job[]>(this.baseUrl + 'jobs', params);
+    return this.getPaginatedResult<Job[]>(this.baseUrl + 'jobs', params)
+      .pipe(map(response => {
+        this.jobCache.set(Object.values(jobParams).join('-'), response);
+        return response;
+      }))
   }
 
   getJob(jobId: number) {
-    const job = this.jobs.find(x => x.id === jobId);
-    if (job !== undefined) return of(job);
+    const job = [...this.jobCache.values()]
+      .reduce((arr, elem) => arr.concat(elem.result), [])
+      .find((job: Job) => job.id === jobId);
+
+    if (job) {
+      return of(job);
+    }
+  
     return this.http.get<Job>(this.baseUrl + 'jobs/' + jobId);
   }
 
