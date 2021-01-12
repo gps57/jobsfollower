@@ -19,7 +19,7 @@ export class JobGridComponent implements OnInit {
   pageSize = environment.defaultGridPageSize;
 
   constructor(private jobService: JobsService) {
-    this.jobParams = new JobParams(this.pageSize);
+    this.jobParams = this.jobService.getJobParams();
   }
 
   ngOnInit(): void {
@@ -27,6 +27,7 @@ export class JobGridComponent implements OnInit {
   }
 
   loadJobs() {
+    this.jobService.setJobParams(this.jobParams);
     this.jobService.getJobs(this.jobParams).subscribe(response => {
       this.jobs = response.result;
       this.pagination = response.pagination;
@@ -34,12 +35,13 @@ export class JobGridComponent implements OnInit {
   }
 
   resetFilters() {
-    this.jobParams = new JobParams(this.pageSize);
+    this.jobParams = this.jobService.resetJobParams();
     this.loadJobs();
   }
 
   pageChanged(event: any) {
     this.jobParams.pageNumber = event.page;
+    this.jobService.setJobParams(this.jobParams);
     this.loadJobs();
   }
 
