@@ -7,6 +7,7 @@ import { JobAddComponent } from '../jobs/job-add/job-add.component';
 import { Job } from '../_models/job';
 import { JobParams } from '../_models/jobParams';
 import { PaginatedResult } from '../_models/pagination';
+import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,7 @@ export class JobsService {
       return of(response);
     }
 
-    let params = this.getPaginationHeaders(jobParams.pageNumber, jobParams.pageSize);
+    let params = getPaginationHeaders(jobParams.pageNumber, jobParams.pageSize);
 
     if (jobParams.company != null){
       params = params.append('company', jobParams.company.toString());
@@ -55,7 +56,7 @@ export class JobsService {
 
     params = params.append('orderBy', jobParams.orderBy);
 
-    return this.getPaginatedResult<Job[]>(this.baseUrl + 'jobs', params)
+    return getPaginatedResult<Job[]>(this.baseUrl + 'jobs', params, this.http)
       .pipe(map(response => {
         this.jobCache.set(Object.values(jobParams).join('-'), response);
         return response;
@@ -101,27 +102,5 @@ export class JobsService {
     return this.jobsDisplayAsList;
   }
 
-  private getPaginatedResult<T>(url: string, params: HttpParams) {
-    const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>();
-
-    return this.http.get<T>(url, { observe: 'response', params }).pipe(
-      map(response => {
-        paginatedResult.result = response.body;
-        if (response.headers.get('Pagination') !== null) {
-          paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
-        }
-        return paginatedResult;
-      })
-    );
-  }
-
-  private getPaginationHeaders (pageNumber: number, pageSize: number) {
-    let params = new HttpParams();
-
-    params = params.append('pageNumber', pageNumber.toString());
-    params = params.append('pageSize', pageSize.toString());
-
-    return params;
-  }
 }
 
