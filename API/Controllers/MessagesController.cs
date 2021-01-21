@@ -87,6 +87,7 @@ namespace API.Controllers
         return messages;
     }
 
+    // the username here is not the currently logged in user.  It is the other user in the conversation
     [HttpGet("thread/{username}")]
     public async Task<ActionResult<IEnumerable<MessageDto>>> GetMessageThread(string username)
     {

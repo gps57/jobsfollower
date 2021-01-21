@@ -37,6 +37,7 @@ namespace API.Data
       return await _context.Messages.FindAsync(id);
     }
 
+    // GetMessagesForUser returns the messages for the currently logged in user
     public async Task<PagedList<MessageDto>> GetMessagesForUser(MessageParams messageParams)
     {
       var query = _context.Messages
@@ -47,6 +48,7 @@ namespace API.Data
       {
         "Inbox" => query.Where(u => u.Recipient.UserName == messageParams.Username),
         "Outbox" => query.Where(u => u.Sender.UserName == messageParams.Username),
+        // the default case is for un-read messages
         _ => query.Where(u => u.Recipient.UserName == messageParams.Username && u.DateRead == null)
       };
 
@@ -62,8 +64,8 @@ namespace API.Data
 
     public async Task<IEnumerable<MessageDto>> GetMessageThread
     (
-        string currentUsername,
-        string recipientUsername
+        string currentUsername, // the currently logged in user
+        string recipientUsername // the other selected user in the conversation
     )
     {
         // find the messages that make up a conversation between the
@@ -72,9 +74,13 @@ namespace API.Data
             .Include(u => u.Sender).ThenInclude(p => p.Photos)
             .Include(u => u.Recipient).ThenInclude(p => p.Photos)
             .Where(
+                // received by the current user
                 m => m.Recipient.UserName == currentUsername
+                // AND sent by the other user
                 && m.Sender.UserName == recipientUsername
+                // OR received by the other user
                 || m.Recipient.UserName == recipientUsername
+                // AND sent by the current user
                 && m.Sender.UserName == currentUsername
             )
             .OrderBy(m => m.MessageSent)
