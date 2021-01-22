@@ -31,6 +31,7 @@ import { PhotoEditorComponent } from './seekers/photo-editor/photo-editor.compon
 import { SeekerEditComponent } from './seekers/seeker-edit/seeker-edit.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { SeekerProfileComponent } from './seekers/seeker-profile/seeker-profile.component';
+import { MessageDetailComponent } from './messages/message-detail/message-detail.component';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -55,7 +56,8 @@ import { SeekerProfileComponent } from './seekers/seeker-profile/seeker-profile.
     PhotoEditorComponent,
     SeekerEditComponent,
     TextInputComponent,
-    SeekerProfileComponent
+    SeekerProfileComponent,
+    MessageDetailComponent
   ],
   imports: [
     BrowserModule,
