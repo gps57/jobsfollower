@@ -1,0 +1,18 @@
+<div class="row" *ngIf="seeker">
+  <div class="col-4">
+      <h1>Conversation with</h1>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <img src="{{seeker.photoUrl || './assets/user.png'}}" alt="{{seeker.firstName}} {{seeker.lastName}}" 
+                class="card-img-top img-thumbnail">
+    </div>
+    <div class="card-body">
+      <div>
+        <strong>Name</strong>
+        <p>{{seeker.firstName}} {{seeker.lastName}}</p>
+    </div>
+    </div>
+  </div>
+</div>
+

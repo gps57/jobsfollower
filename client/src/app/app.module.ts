@@ -12,7 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { JobListComponent } from './jobs/job-list/job-list.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { ListsComponent } from './lists/lists.component';
-import { MessagesComponent } from './messages/messages.component';
+import { MessagesListComponent } from './messages/messages-list/messages-list.component';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
@@ -30,6 +30,7 @@ import { SeekerListComponent } from './seekers/seeker-list/seeker-list.component
 import { PhotoEditorComponent } from './seekers/photo-editor/photo-editor.component';
 import { SeekerEditComponent } from './seekers/seeker-edit/seeker-edit.component';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { SeekerProfileComponent } from './seekers/seeker-profile/seeker-profile.component';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -41,7 +42,7 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
     JobListComponent,
     JobDetailComponent,
     ListsComponent,
-    MessagesComponent,
+    MessagesListComponent,
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
@@ -53,7 +54,8 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
     SeekerListComponent,
     PhotoEditorComponent,
     SeekerEditComponent,
-    TextInputComponent
+    TextInputComponent,
+    SeekerProfileComponent
   ],
   imports: [
     BrowserModule,
