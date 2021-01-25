@@ -1,15 +1,19 @@
 .stat-applied {
-  background-color: rgba(175, 142, 142, 0.527);
+  background-color:#436d9a;
+  color: whitesmoke;
 }
 
 .stat-active {
-  background-color: rgba(250, 6, 6, 0.2);
+  background-color: #9a6443;
+  color: whitesmoke;
 }
 
 .stat-rejected {
-  background-color: rgba(97, 59, 59, 0.2);
+  background-color: #9a9043;
+  color: whitesmoke;
 }
 
 .stat-expired {
-  background-color: rgba(0,0,0,0.2);
+  background-color: #86439a;
+  color: whitesmoke;
 }
