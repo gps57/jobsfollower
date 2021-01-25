@@ -3,12 +3,12 @@
     <div class="col-3" *ngFor="let stat of statsList">
         <div class="card">
           <div [ngClass]="{
-            'stat-applied': stat.value=='applied',
-            'stat-active': stat.value=='active',
-            'stat-rejected': stat.value=='rejected',
-            'stat-expired': stat.value=='expired'
-          }" class="p-2">
-            <h3>23</h3>
+            'stat-applied': stat.type=='applied',
+            'stat-active': stat.type=='active',
+            'stat-rejected': stat.type=='rejected',
+            'stat-expired': stat.type=='expired'
+          }" class="p-3">
+            <h2>{{stat.value}}</h2>
             {{stat.display}}
           </div>
         </div>
