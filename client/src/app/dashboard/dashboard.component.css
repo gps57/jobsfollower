@@ -1,0 +1,15 @@
+.stat-applied {
+  background-color: rgba(175, 142, 142, 0.527);
+}
+
+.stat-active {
+  background-color: rgba(250, 6, 6, 0.2);
+}
+
+.stat-rejected {
+  background-color: rgba(97, 59, 59, 0.2);
+}
+
+.stat-expired {
+  background-color: rgba(0,0,0,0.2);
+}

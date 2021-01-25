@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row mb-4">
+    <div class="col-3" *ngFor="let stat of statsList">
+        <div class="card">
+          <div [ngClass]="{
+            'stat-applied': stat.value=='applied',
+            'stat-active': stat.value=='active',
+            'stat-rejected': stat.value=='rejected',
+            'stat-expired': stat.value=='expired'
+          }" class="p-2">
+            <h3>23</h3>
+            {{stat.display}}
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="row dflex justify-content-center">
+    <div class="col-12">
+      <app-job-list></app-job-list>
+    </div>
+  </div>
+</div>

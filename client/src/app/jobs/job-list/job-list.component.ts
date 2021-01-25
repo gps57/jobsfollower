@@ -19,7 +19,11 @@ export class JobListComponent implements OnInit {
   pagination: Pagination;
   jobParams: JobParams;
   pageSize = environment.defaultListPageSize;
-  sortByList = [{value: 'created', display: 'Created Date'}, {value: 'title', display: 'Job Title'}, {value: 'company', display: 'Company'}];
+  sortByList = [
+    {value: 'created', display: 'Created Date'},
+    {value: 'title', display: 'Job Title'},
+    {value: 'company', display: 'Company'}
+  ];
 
   constructor(private jobService: JobsService, private router: Router) {
     this.jobParams = this.jobService.getJobParams();

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
@@ -9,13 +10,15 @@ import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { JobEditComponent } from './jobs/job-edit/job-edit.component';
 import { JobsComponent } from './jobs/jobs/jobs.component';
 import { ListsComponent } from './lists/lists.component';
+import { MessageDetailComponent } from './messages/message-detail/message-detail.component';
 import { MessagesListComponent } from './messages/messages-list/messages-list.component';
 import { SeekerEditComponent } from './seekers/seeker-edit/seeker-edit.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  // {path: '', component: HomeComponent},
+  {path: '', component: DashboardComponent},
   {
     path: '',
     runGuardsAndResolvers: 'always',
@@ -28,6 +31,7 @@ const routes: Routes = [
       {path: 'seeker/edit', component: SeekerEditComponent, canDeactivate: [PreventUnsavedChangesGuard], pathMatch: 'full'},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesListComponent},
+      {path: 'messages/:id', component: MessageDetailComponent},
     ]
   },
   {path: 'errors', component: TestErrorsComponent},
