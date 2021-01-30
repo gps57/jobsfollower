@@ -41,11 +41,11 @@ namespace API.Controllers
       return await _jobRepository.GetJobDtoAsync(jobId);
     }
 
-    // for example: api/jobs/3
-    [HttpGet("getstats/{userId}", Name = "GetStats")]
-    public async Task<ActionResult<JobsStatsDto>> GetStats(int userId)
+    // for example: api/jobs/username
+    [HttpGet("getstats/{username}", Name = "GetStats")]
+    public async Task<ActionResult<JobsStatsDto>> GetStats(string username)
     {
-      return await _jobRepository.GetJobsStatsByUserIdAsync(userId);
+      return await _jobRepository.GetJobsStatsByUsernameAsync(username);
     }
 
     // How do I structure this?

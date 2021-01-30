@@ -96,10 +96,10 @@ namespace API.Data
       _context.Entry(job).State = EntityState.Modified;
     }
 
-    public async Task<JobsStatsDto> GetJobsStatsByUserIdAsync(int userId)
+    public async Task<JobsStatsDto> GetJobsStatsByUsernameAsync(string username)
     {
 
-        var jobs = await _context.Jobs.Where(r => r.AppUserId == userId).ToListAsync();
+        var jobs = await _context.Jobs.Where(r => r.AppUser.UserName == username).ToListAsync();
         var activeJobs = jobs.Where(r => r.IsActive == true).ToList();
         var appliedJobs = jobs.Where(r => r.DateApplied != null).ToList();
         var respondedJobs = jobs.Where(r => r.Responded == true).ToList();

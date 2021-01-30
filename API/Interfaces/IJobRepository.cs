@@ -15,6 +15,6 @@ namespace API.Interfaces
         Task<JobDto> GetJobDtoAsync(int jobId);
         Task<JobDto> GetUserJobAsync(string username, int jobId);
         Task<PagedList<JobDto>> GetUserJobsAsync(string username);
-        Task<JobsStatsDto> GetJobsStatsByUserIdAsync(int id);
+        Task<JobsStatsDto> GetJobsStatsByUsernameAsync(string username);
     }
 }
