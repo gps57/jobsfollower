@@ -26,8 +26,10 @@
         "Description": "Description 111",
         "Company": "Staffing Company",
         "Created": "2020-09-25",
+        "DateApplied": "2020-09-25",
         "Notes": "1",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo2",
@@ -35,8 +37,10 @@
         "Description": "Description 222",
         "Company": "Benvia",
         "Created": "2020-10-12",
+        "DateApplied": null,
         "Notes": "2",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo3",
@@ -44,8 +48,10 @@
         "Description": "Description 333",
         "Company": "Microsoft",
         "Created": "2020-04-25",
+        "DateApplied": null,
         "Notes": "3",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo4",
@@ -53,8 +59,10 @@
         "Description": "Description 444",
         "Company": "Google",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "4",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo5",
@@ -62,8 +70,10 @@
         "Description": "Description 555",
         "Company": "Microsoft",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "5",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo6",
@@ -71,8 +81,10 @@
         "Description": "Description 666",
         "Company": "Google",
         "Created": "2020-10-25",
+        "DateApplied": null,
         "Notes": "6",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo7",
@@ -80,8 +92,10 @@
         "Description": "Description 777",
         "Company": "Google",
         "Created": "2020-09-28",
+        "DateApplied": null,
         "Notes": "7",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo8",
@@ -89,8 +103,10 @@
         "Description": "Description 888",
         "Company": "Cloud 9",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "8",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo9",
@@ -98,8 +114,10 @@
         "Description": "Description 999",
         "Company": "Net App",
         "Created": "2020-10-01",
+        "DateApplied": null,
         "Notes": "9",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo10",
@@ -107,8 +125,10 @@
         "Description": "Description 101010",
         "Company": "Cloud 9",
         "Created": "2020-10-02",
+        "DateApplied": null,
         "Notes": "10",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo11",
@@ -116,8 +136,10 @@
         "Description": "Description 111111",
         "Company": "Net App",
         "Created": "2020-10-02",
+        "DateApplied": null,
         "Notes": "11",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo12",
@@ -125,8 +147,10 @@
         "Description": "Description 121212",
         "Company": "Cloud 9",
         "Created": "2020-10-12",
+        "DateApplied": null,
         "Notes": "12",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo13",
@@ -134,8 +158,10 @@
         "Description": "Description 131313",
         "Company": "Microsoft",
         "Created": "2020-10-11",
+        "DateApplied": null,
         "Notes": "13",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo14",
@@ -143,8 +169,10 @@
         "Description": "Description 141414",
         "Company": "Net App",
         "Created": "2020-10-21",
+        "DateApplied": null,
         "Notes": "14",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo15",
@@ -152,8 +180,10 @@
         "Description": "Description 151515",
         "Company": "Microsoft",
         "Created": "2020-10-22",
+        "DateApplied": null,
         "Notes": "15",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo16",
@@ -161,8 +191,10 @@
         "Description": "Description 161616",
         "Company": "Staffing Company",
         "Created": "2020-10-13",
+        "DateApplied": null,
         "Notes": "16",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo17",
@@ -170,8 +202,10 @@
         "Description": "Description 171717",
         "Company": "Microsoft",
         "Created": "2020-10-25",
+        "DateApplied": null,
         "Notes": "17",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo18",
@@ -179,8 +213,10 @@
         "Description": "Description 181818",
         "Company": "Microsoft",
         "Created": "2020-10-15",
+        "DateApplied": null,
         "Notes": "18",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo19",
@@ -188,8 +224,10 @@
         "Description": "Description 191919",
         "Company": "Sweetwater",
         "Created": "2020-10-15",
+        "DateApplied": null,
         "Notes": "19",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo20",
@@ -197,8 +235,10 @@
         "Description": "Description 202020",
         "Company": "Sweetwater",
         "Created": "2020-10-14",
+        "DateApplied": null,
         "Notes": "20",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo21",
@@ -206,8 +246,10 @@
         "Description": "Description 212121",
         "Company": "Sweetwater",
         "Created": "2020-10-18",
+        "DateApplied": null,
         "Notes": "21",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo22",
@@ -215,8 +257,10 @@
         "Description": "Description 222222",
         "Company": "Tesla",
         "Created": "2020-10-10",
+        "DateApplied": null,
         "Notes": "22",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo23",
@@ -224,8 +268,10 @@
         "Description": "Description 232323",
         "Company": "Tesla",
         "Created": "2020-10-30",
+        "DateApplied": null,
         "Notes": "23",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       }
     ]
   },
@@ -257,8 +303,10 @@
         "Description": "Description 111",
         "Company": "Staffing Company",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "1",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo2",
@@ -266,8 +314,10 @@
         "Description": "Description 222",
         "Company": "Benvia",
         "Created": "2020-10-12",
+        "DateApplied": null,
         "Notes": "2",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo3",
@@ -275,8 +325,10 @@
         "Description": "Description 333",
         "Company": "Microsoft",
         "Created": "2020-04-25",
+        "DateApplied": null,
         "Notes": "3",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo4",
@@ -284,8 +336,10 @@
         "Description": "Description 444",
         "Company": "Google",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "4",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo5",
@@ -293,8 +347,10 @@
         "Description": "Description 555",
         "Company": "Microsoft",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "5",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo6",
@@ -302,8 +358,10 @@
         "Description": "Description 666",
         "Company": "Google",
         "Created": "2020-10-25",
+        "DateApplied": null,
         "Notes": "6",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo7",
@@ -311,8 +369,10 @@
         "Description": "Description 777",
         "Company": "Google",
         "Created": "2020-09-28",
+        "DateApplied": null,
         "Notes": "7",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo8",
@@ -320,8 +380,10 @@
         "Description": "Description 888",
         "Company": "Cloud 9",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "8",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo9",
@@ -329,8 +391,10 @@
         "Description": "Description 999",
         "Company": "Net App",
         "Created": "2020-10-01",
+        "DateApplied": null,
         "Notes": "9",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo10",
@@ -338,8 +402,10 @@
         "Description": "Description 101010",
         "Company": "Cloud 9",
         "Created": "2020-10-02",
+        "DateApplied": null,
         "Notes": "10",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo11",
@@ -347,8 +413,10 @@
         "Description": "Description 111111",
         "Company": "Net App",
         "Created": "2020-10-02",
+        "DateApplied": null,
         "Notes": "11",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo12",
@@ -356,8 +424,10 @@
         "Description": "Description 121212",
         "Company": "Cloud 9",
         "Created": "2020-10-12",
+        "DateApplied": null,
         "Notes": "12",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo13",
@@ -365,8 +435,10 @@
         "Description": "Description 131313",
         "Company": "Microsoft",
         "Created": "2020-10-11",
+        "DateApplied": null,
         "Notes": "13",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo14",
@@ -374,8 +446,10 @@
         "Description": "Description 141414",
         "Company": "Net App",
         "Created": "2020-10-21",
+        "DateApplied": null,
         "Notes": "14",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo15",
@@ -383,8 +457,10 @@
         "Description": "Description 151515",
         "Company": "Microsoft",
         "Created": "2020-10-22",
+        "DateApplied": null,
         "Notes": "15",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo16",
@@ -392,8 +468,10 @@
         "Description": "Description 161616",
         "Company": "Staffing Company",
         "Created": "2020-10-13",
+        "DateApplied": null,
         "Notes": "16",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo17",
@@ -401,8 +479,10 @@
         "Description": "Description 171717",
         "Company": "Microsoft",
         "Created": "2020-10-25",
+        "DateApplied": null,
         "Notes": "17",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo18",
@@ -410,8 +490,10 @@
         "Description": "Description 181818",
         "Company": "Microsoft",
         "Created": "2020-10-15",
+        "DateApplied": null,
         "Notes": "18",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo19",
@@ -419,8 +501,10 @@
         "Description": "Description 191919",
         "Company": "Sweetwater",
         "Created": "2020-10-15",
+        "DateApplied": null,
         "Notes": "19",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo20",
@@ -428,8 +512,10 @@
         "Description": "Description 202020",
         "Company": "Sweetwater",
         "Created": "2020-10-14",
+        "DateApplied": null,
         "Notes": "20",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo21",
@@ -437,8 +523,10 @@
         "Description": "Description 212121",
         "Company": "Sweetwater",
         "Created": "2020-10-18",
+        "DateApplied": null,
         "Notes": "21",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo22",
@@ -446,8 +534,10 @@
         "Description": "Description 222222",
         "Company": "Tesla",
         "Created": "2020-10-10",
+        "DateApplied": null,
         "Notes": "22",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo23",
@@ -455,8 +545,10 @@
         "Description": "Description 232323",
         "Company": "Tesla",
         "Created": "2020-10-30",
+        "DateApplied": null,
         "Notes": "23",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       }
     ]
   },
@@ -488,8 +580,10 @@
         "Description": "Description 111",
         "Company": "Staffing Company",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "1",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo2",
@@ -497,8 +591,10 @@
         "Description": "Description 222",
         "Company": "Benvia",
         "Created": "2020-10-12",
+        "DateApplied": null,
         "Notes": "2",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo3",
@@ -506,8 +602,10 @@
         "Description": "Description 333",
         "Company": "Microsoft",
         "Created": "2020-04-25",
+        "DateApplied": null,
         "Notes": "3",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo4",
@@ -515,8 +613,10 @@
         "Description": "Description 444",
         "Company": "Google",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "4",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo5",
@@ -524,8 +624,10 @@
         "Description": "Description 555",
         "Company": "Microsoft",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "5",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo6",
@@ -533,8 +635,10 @@
         "Description": "Description 666",
         "Company": "Google",
         "Created": "2020-10-25",
+        "DateApplied": null,
         "Notes": "6",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo7",
@@ -542,8 +646,10 @@
         "Description": "Description 777",
         "Company": "Google",
         "Created": "2020-09-28",
+        "DateApplied": null,
         "Notes": "7",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo8",
@@ -551,8 +657,10 @@
         "Description": "Description 888",
         "Company": "Cloud 9",
         "Created": "2020-09-25",
+        "DateApplied": null,
         "Notes": "8",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo9",
@@ -560,8 +668,10 @@
         "Description": "Description 999",
         "Company": "Net App",
         "Created": "2020-10-01",
+        "DateApplied": null,
         "Notes": "9",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo10",
@@ -569,8 +679,10 @@
         "Description": "Description 101010",
         "Company": "Cloud 9",
         "Created": "2020-10-02",
+        "DateApplied": null,
         "Notes": "10",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo11",
@@ -578,8 +690,10 @@
         "Description": "Description 111111",
         "Company": "Net App",
         "Created": "2020-10-02",
+        "DateApplied": null,
         "Notes": "11",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo12",
@@ -587,8 +701,10 @@
         "Description": "Description 121212",
         "Company": "Cloud 9",
         "Created": "2020-10-12",
+        "DateApplied": null,
         "Notes": "12",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo13",
@@ -596,8 +712,10 @@
         "Description": "Description 131313",
         "Company": "Microsoft",
         "Created": "2020-10-11",
+        "DateApplied": null,
         "Notes": "13",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo14",
@@ -605,8 +723,10 @@
         "Description": "Description 141414",
         "Company": "Net App",
         "Created": "2020-10-21",
+        "DateApplied": null,
         "Notes": "14",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo15",
@@ -614,8 +734,10 @@
         "Description": "Description 151515",
         "Company": "Microsoft",
         "Created": "2020-10-22",
+        "DateApplied": null,
         "Notes": "15",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo16",
@@ -623,8 +745,10 @@
         "Description": "Description 161616",
         "Company": "Staffing Company",
         "Created": "2020-10-13",
+        "DateApplied": null,
         "Notes": "16",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo17",
@@ -632,8 +756,10 @@
         "Description": "Description 171717",
         "Company": "Microsoft",
         "Created": "2020-10-25",
+        "DateApplied": null,
         "Notes": "17",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo18",
@@ -641,8 +767,10 @@
         "Description": "Description 181818",
         "Company": "Microsoft",
         "Created": "2020-10-15",
+        "DateApplied": null,
         "Notes": "18",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo19",
@@ -650,8 +778,10 @@
         "Description": "Description 191919",
         "Company": "Sweetwater",
         "Created": "2020-10-15",
+        "DateApplied": null,
         "Notes": "19",
-        "IsActive": true
+        "IsActive": true,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo20",
@@ -659,8 +789,10 @@
         "Description": "Description 202020",
         "Company": "Sweetwater",
         "Created": "2020-10-14",
+        "DateApplied": null,
         "Notes": "20",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo21",
@@ -668,8 +800,10 @@
         "Description": "Description 212121",
         "Company": "Sweetwater",
         "Created": "2020-10-18",
+        "DateApplied": null,
         "Notes": "21",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo22",
@@ -677,8 +811,10 @@
         "Description": "Description 222222",
         "Company": "Tesla",
         "Created": "2020-10-10",
+        "DateApplied": null,
         "Notes": "22",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       },
       {
         "Url": "https://jobsfollower.com/demo23",
@@ -686,8 +822,10 @@
         "Description": "Description 232323",
         "Company": "Tesla",
         "Created": "2020-10-30",
+        "DateApplied": null,
         "Notes": "23",
-        "IsActive": false
+        "IsActive": false,
+        "Responded": false
       }
     ]
   }  

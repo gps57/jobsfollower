@@ -95,5 +95,23 @@ namespace API.Data
     {
       _context.Entry(job).State = EntityState.Modified;
     }
+
+    public async Task<JobsStatsDto> GetJobsStatsByUserIdAsync(int userId)
+    {
+
+        var jobs = await _context.Jobs.Where(r => r.AppUserId == userId).ToListAsync();
+        var activeJobs = jobs.Where(r => r.IsActive == true).ToList();
+        var appliedJobs = jobs.Where(r => r.DateApplied != null).ToList();
+        var respondedJobs = jobs.Where(r => r.Responded == true).ToList();
+
+        var returnValue = new JobsStatsDto {
+            TotalJobs = jobs.Count,
+            TotalActive = activeJobs.Count,
+            TotalApplied = appliedJobs.Count,
+            TotalResponses = respondedJobs.Count
+        };
+
+        return returnValue;
+    }
   }
 }

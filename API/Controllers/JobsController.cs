@@ -41,6 +41,13 @@ namespace API.Controllers
       return await _jobRepository.GetJobDtoAsync(jobId);
     }
 
+    // for example: api/jobs/3
+    [HttpGet("getstats/{userId}", Name = "GetStats")]
+    public async Task<ActionResult<JobsStatsDto>> GetStats(int userId)
+    {
+      return await _jobRepository.GetJobsStatsByUserIdAsync(userId);
+    }
+
     // How do I structure this?
     // PUT: api/update/id
     [HttpPut("update/{jobId}")]

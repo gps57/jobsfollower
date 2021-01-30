@@ -12,8 +12,10 @@ namespace API.Entities
     public string Description { get; set; }
     public string Company { get; set; }
     public DateTime Created { get; set; } = DateTime.Now;
+    public DateTime? DateApplied { get; set; }
     public string Notes { get; set; }
     public bool IsActive { get; set; } = true;
+    public bool Responded { get; set; } = false;
     public AppUser AppUser { get; set; }
     public int AppUserId { get; set; }
   }
