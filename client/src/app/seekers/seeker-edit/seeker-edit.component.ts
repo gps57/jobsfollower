@@ -38,7 +38,6 @@ export class SeekerEditComponent implements OnInit {
   }
 
   canDeactivate() {
-    console.log("leaving seeker edit");
     if (this.editForm.dirty){
       return confirm('Are you sure you want stop editing seeker? Any unsaved changes will be lost.');
     }
