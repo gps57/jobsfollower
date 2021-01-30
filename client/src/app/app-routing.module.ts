@@ -15,10 +15,11 @@ import { MessagesListComponent } from './messages/messages-list/messages-list.co
 import { SeekerEditComponent } from './seekers/seeker-edit/seeker-edit.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
+import { JobsStatsResolver } from './_resolvers/jobs-stats.resolver';
 
 const routes: Routes = [
   // {path: '', component: HomeComponent},
-  {path: '', component: DashboardComponent},
+  {path: '', component: DashboardComponent, resolve : {jobsStats: JobsStatsResolver}},
   {
     path: '',
     runGuardsAndResolvers: 'always',

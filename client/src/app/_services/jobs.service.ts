@@ -3,9 +3,11 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { JobStatsComponent } from '../dashboard/job-stats/job-stats.component';
 import { JobAddComponent } from '../jobs/job-add/job-add.component';
 import { Job } from '../_models/job';
 import { JobParams } from '../_models/jobParams';
+import { JobsStats } from '../_models/jobsStats';
 import { PaginatedResult } from '../_models/pagination';
 import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
 
@@ -17,6 +19,7 @@ export class JobsService {
   pageSize = environment.defaultListPageSize;
   jobs: Job[] = [];
   jobParams: JobParams;
+  jobsStats: JobsStats;
   jobCache = new Map();
   jobsDisplayAsList: boolean = true;
 
@@ -28,6 +31,10 @@ export class JobsService {
     return this.jobParams;
   }
 
+  getJobsCount() {
+    return this.jobs.length;
+  }
+
   setJobParams(params: JobParams) {
     this.jobParams = params;
   }
@@ -35,6 +42,10 @@ export class JobsService {
   resetJobParams() {
     this.jobParams = new JobParams(this.pageSize);
     return this.jobParams;
+  }
+
+  getJobsStats(username: string) {
+    return this.http.get<JobsStats>(this.baseUrl + 'jobs/getstats/' + username); //jobs/getstats/
   }
 
   getJobs(jobParams: JobParams) {

@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <!-- the square brakets are used to send information (data) from the component's HTML template to it's Typescript class -->
+    <!-- the square brackets are used to send information (data) from the component's HTML template to it's Typescript class -->
     <!-- the parenthesis are used to send information (data) from the component's Typescript class to it's HTML template -->
     <!-- when both square brakets and parenthesis are used, it indicated two-way binding between the template and the typescript -->
     <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">

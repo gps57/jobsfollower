@@ -3,17 +3,17 @@
   color: whitesmoke;
 }
 
-.stat-active {
+.stat-responded {
   background-color: #9a6443;
   color: whitesmoke;
 }
 
-.stat-rejected {
+.stat-active {
   background-color: #9a9043;
   color: whitesmoke;
 }
 
-.stat-expired {
+.stat-rejected {
   background-color: #86439a;
   color: whitesmoke;
 }

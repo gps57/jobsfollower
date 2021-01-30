@@ -1,22 +1,33 @@
 <div class="container">
   <div class="row mb-4">
-    <div class="col-3" *ngFor="let stat of statsList">
-        <div class="card">
-          <div [ngClass]="{
-            'stat-applied': stat.type=='applied',
-            'stat-active': stat.type=='active',
-            'stat-rejected': stat.type=='rejected',
-            'stat-expired': stat.type=='expired'
-          }" class="p-3">
-            <h2>{{stat.value}}</h2>
-            {{stat.display}}
-          </div>
-        </div>
+    <div class="col-3">
+      <div class="card stat-applied p-3">
+        <h2>{{jobsStats.totalJobs}}</h2>
+        Total jobs in system
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card stat-responded p-3">
+        <h2>{{jobsStats.totalApplied}}</h2>
+        Total Jobs Applied
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card stat-active p-3">
+        <h2>{{jobsStats.totalResponses}}</h2>
+        Total Responses
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card stat-rejected p-3">
+        <h2>{{jobsStats.totalActive}}</h2>
+        Total Jobs Active
+      </div>
     </div>
   </div>
   <div class="row dflex justify-content-center">
     <div class="col-12">
-      <app-job-list></app-job-list>
+      <app-job-list [jobsStats] = "jobsStats" (statsChange)="updateStats($event)"></app-job-list>
     </div>
   </div>
 </div>

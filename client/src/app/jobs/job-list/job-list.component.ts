@@ -1,11 +1,13 @@
 import { createDirective } from '@angular/compiler/src/core';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+// import { EventEmitter } from 'events';
 import { Observable } from 'rxjs';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { Job } from 'src/app/_models/job';
 import { JobParams } from 'src/app/_models/jobParams';
 import { Pagination } from 'src/app/_models/pagination';
+import { JobsStats } from 'src/app/_models/jobsStats';
 import { JobsService } from 'src/app/_services/jobs.service';
 import { environment } from 'src/environments/environment';
 
@@ -24,8 +26,11 @@ export class JobListComponent implements OnInit {
     {value: 'title', display: 'Job Title'},
     {value: 'company', display: 'Company'}
   ];
+  @Input() jobsStats: JobsStats;
+  @Output() statsChange: EventEmitter<JobsStats> = new EventEmitter<JobsStats>();
 
-  constructor(private jobService: JobsService, private router: Router) {
+  constructor(private jobService: JobsService,
+    private router: Router) {
     this.jobParams = this.jobService.getJobParams();
   }
 
@@ -39,6 +44,19 @@ export class JobListComponent implements OnInit {
       this.jobs = response.result;
       this.pagination = response.pagination;
     })
+    this.updateStats();
+  }
+
+  // setStatsParams() {
+  //   // this.statsParams.totalJobs = this.pagination.totalItems;
+
+  //   console.log("calling updateStats")
+  //   this.updateStats();
+  // }
+
+  updateStats() {
+    console.log("raising event")
+    this.statsChange.emit(this.jobsStats);
   }
 
   resetFilters() {
