@@ -55,7 +55,6 @@ export class JobListComponent implements OnInit {
   // }
 
   updateStats() {
-    console.log("raising event")
     this.statsChange.emit(this.jobsStats);
   }
 
