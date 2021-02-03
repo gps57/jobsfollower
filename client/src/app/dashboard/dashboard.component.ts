@@ -24,12 +24,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.jobsStats = data.jobsStats;
-      console.log("Dashboard ngOnInit(): ", this.jobsStats);
     })    
   }
 
   updateStats(newParams: JobsStats) {
     this.jobsStats = newParams;
-    console.log("dashboard updateStats(): ", this.jobsStats);
   }
 }
