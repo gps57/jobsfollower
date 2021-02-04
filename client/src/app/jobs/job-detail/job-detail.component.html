@@ -10,7 +10,11 @@
         <strong>Company:</strong>
         <p> {{job.company}}</p>
         <strong>Description:</strong>
-        <p>{{job.description}}</p>
+        <p> {{job.description}}</p>
+        <strong>Notes:</strong><br>
+        <div *ngFor="let note of notes">
+          <p class="ml-2"><span class="mr-2">{{note.created | date:'dd MMM yyyy'}} -</span>{{note.content}}</p>
+        </div>
       </div>
       <div class="card-footer">
         <a class="button btn btn-primary mr-3" target="_blank" href={{job.url}}>Go To Job Posting</a>
