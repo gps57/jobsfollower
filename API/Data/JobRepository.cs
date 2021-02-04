@@ -32,7 +32,9 @@ namespace API.Data
             Description = job.Description,
             Company = job.Company,
             Created = job.Created,
-            Notes = job.Notes,
+            // TODO: Notes is now a collection so this needs to be fixed so the
+            // collection of Notes for a job can be sent to the client side.
+            // Notes = job.Notes,
             IsActive = job.IsActive 
             };
 

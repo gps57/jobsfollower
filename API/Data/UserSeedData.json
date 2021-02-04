@@ -27,7 +27,6 @@
         "Company": "Staffing Company",
         "Created": "2020-09-25",
         "DateApplied": "2020-09-25",
-        "Notes": "1",
         "IsActive": true,
         "Responded": false
       },
@@ -38,7 +37,6 @@
         "Company": "Benvia",
         "Created": "2020-10-12",
         "DateApplied": null,
-        "Notes": "2",
         "IsActive": true,
         "Responded": false
       },
@@ -49,7 +47,6 @@
         "Company": "Microsoft",
         "Created": "2020-04-25",
         "DateApplied": null,
-        "Notes": "3",
         "IsActive": true,
         "Responded": false
       },
@@ -60,7 +57,6 @@
         "Company": "Google",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "4",
         "IsActive": true,
         "Responded": false
       },
@@ -71,7 +67,6 @@
         "Company": "Microsoft",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "5",
         "IsActive": true,
         "Responded": false
       },
@@ -82,7 +77,6 @@
         "Company": "Google",
         "Created": "2020-10-25",
         "DateApplied": null,
-        "Notes": "6",
         "IsActive": true,
         "Responded": false
       },
@@ -93,7 +87,6 @@
         "Company": "Google",
         "Created": "2020-09-28",
         "DateApplied": null,
-        "Notes": "7",
         "IsActive": true,
         "Responded": false
       },
@@ -104,7 +97,6 @@
         "Company": "Cloud 9",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "8",
         "IsActive": true,
         "Responded": false
       },
@@ -115,7 +107,6 @@
         "Company": "Net App",
         "Created": "2020-10-01",
         "DateApplied": null,
-        "Notes": "9",
         "IsActive": true,
         "Responded": false
       },
@@ -126,7 +117,6 @@
         "Company": "Cloud 9",
         "Created": "2020-10-02",
         "DateApplied": null,
-        "Notes": "10",
         "IsActive": true,
         "Responded": false
       },
@@ -137,7 +127,6 @@
         "Company": "Net App",
         "Created": "2020-10-02",
         "DateApplied": null,
-        "Notes": "11",
         "IsActive": true,
         "Responded": false
       },
@@ -148,7 +137,6 @@
         "Company": "Cloud 9",
         "Created": "2020-10-12",
         "DateApplied": null,
-        "Notes": "12",
         "IsActive": true,
         "Responded": false
       },
@@ -159,7 +147,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-11",
         "DateApplied": null,
-        "Notes": "13",
         "IsActive": true,
         "Responded": false
       },
@@ -170,7 +157,6 @@
         "Company": "Net App",
         "Created": "2020-10-21",
         "DateApplied": null,
-        "Notes": "14",
         "IsActive": true,
         "Responded": false
       },
@@ -181,7 +167,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-22",
         "DateApplied": null,
-        "Notes": "15",
         "IsActive": true,
         "Responded": false
       },
@@ -192,7 +177,6 @@
         "Company": "Staffing Company",
         "Created": "2020-10-13",
         "DateApplied": null,
-        "Notes": "16",
         "IsActive": true,
         "Responded": false
       },
@@ -203,7 +187,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-25",
         "DateApplied": null,
-        "Notes": "17",
         "IsActive": true,
         "Responded": false
       },
@@ -214,7 +197,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-15",
         "DateApplied": null,
-        "Notes": "18",
         "IsActive": true,
         "Responded": false
       },
@@ -225,7 +207,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-15",
         "DateApplied": null,
-        "Notes": "19",
         "IsActive": true,
         "Responded": false
       },
@@ -236,7 +217,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-14",
         "DateApplied": null,
-        "Notes": "20",
         "IsActive": false,
         "Responded": false
       },
@@ -247,7 +227,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-18",
         "DateApplied": null,
-        "Notes": "21",
         "IsActive": false,
         "Responded": false
       },
@@ -258,7 +237,6 @@
         "Company": "Tesla",
         "Created": "2020-10-10",
         "DateApplied": null,
-        "Notes": "22",
         "IsActive": false,
         "Responded": false
       },
@@ -269,7 +247,6 @@
         "Company": "Tesla",
         "Created": "2020-10-30",
         "DateApplied": null,
-        "Notes": "23",
         "IsActive": false,
         "Responded": false
       }
@@ -304,7 +281,6 @@
         "Company": "Staffing Company",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "1",
         "IsActive": true,
         "Responded": false
       },
@@ -315,7 +291,6 @@
         "Company": "Benvia",
         "Created": "2020-10-12",
         "DateApplied": null,
-        "Notes": "2",
         "IsActive": true,
         "Responded": false
       },
@@ -326,7 +301,6 @@
         "Company": "Microsoft",
         "Created": "2020-04-25",
         "DateApplied": null,
-        "Notes": "3",
         "IsActive": true,
         "Responded": false
       },
@@ -337,7 +311,6 @@
         "Company": "Google",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "4",
         "IsActive": true,
         "Responded": false
       },
@@ -348,7 +321,6 @@
         "Company": "Microsoft",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "5",
         "IsActive": true,
         "Responded": false
       },
@@ -359,7 +331,6 @@
         "Company": "Google",
         "Created": "2020-10-25",
         "DateApplied": null,
-        "Notes": "6",
         "IsActive": true,
         "Responded": false
       },
@@ -370,7 +341,6 @@
         "Company": "Google",
         "Created": "2020-09-28",
         "DateApplied": null,
-        "Notes": "7",
         "IsActive": true,
         "Responded": false
       },
@@ -381,7 +351,6 @@
         "Company": "Cloud 9",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "8",
         "IsActive": true,
         "Responded": false
       },
@@ -392,7 +361,6 @@
         "Company": "Net App",
         "Created": "2020-10-01",
         "DateApplied": null,
-        "Notes": "9",
         "IsActive": true,
         "Responded": false
       },
@@ -403,7 +371,6 @@
         "Company": "Cloud 9",
         "Created": "2020-10-02",
         "DateApplied": null,
-        "Notes": "10",
         "IsActive": true,
         "Responded": false
       },
@@ -414,7 +381,6 @@
         "Company": "Net App",
         "Created": "2020-10-02",
         "DateApplied": null,
-        "Notes": "11",
         "IsActive": true,
         "Responded": false
       },
@@ -425,7 +391,6 @@
         "Company": "Cloud 9",
         "Created": "2020-10-12",
         "DateApplied": null,
-        "Notes": "12",
         "IsActive": true,
         "Responded": false
       },
@@ -436,7 +401,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-11",
         "DateApplied": null,
-        "Notes": "13",
         "IsActive": true,
         "Responded": false
       },
@@ -447,7 +411,6 @@
         "Company": "Net App",
         "Created": "2020-10-21",
         "DateApplied": null,
-        "Notes": "14",
         "IsActive": true,
         "Responded": false
       },
@@ -458,7 +421,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-22",
         "DateApplied": null,
-        "Notes": "15",
         "IsActive": true,
         "Responded": false
       },
@@ -469,7 +431,6 @@
         "Company": "Staffing Company",
         "Created": "2020-10-13",
         "DateApplied": null,
-        "Notes": "16",
         "IsActive": true,
         "Responded": false
       },
@@ -480,7 +441,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-25",
         "DateApplied": null,
-        "Notes": "17",
         "IsActive": true,
         "Responded": false
       },
@@ -491,7 +451,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-15",
         "DateApplied": null,
-        "Notes": "18",
         "IsActive": true,
         "Responded": false
       },
@@ -502,7 +461,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-15",
         "DateApplied": null,
-        "Notes": "19",
         "IsActive": true,
         "Responded": false
       },
@@ -513,7 +471,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-14",
         "DateApplied": null,
-        "Notes": "20",
         "IsActive": false,
         "Responded": false
       },
@@ -524,7 +481,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-18",
         "DateApplied": null,
-        "Notes": "21",
         "IsActive": false,
         "Responded": false
       },
@@ -535,7 +491,6 @@
         "Company": "Tesla",
         "Created": "2020-10-10",
         "DateApplied": null,
-        "Notes": "22",
         "IsActive": false,
         "Responded": false
       },
@@ -546,7 +501,6 @@
         "Company": "Tesla",
         "Created": "2020-10-30",
         "DateApplied": null,
-        "Notes": "23",
         "IsActive": false,
         "Responded": false
       }
@@ -581,7 +535,6 @@
         "Company": "Staffing Company",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "1",
         "IsActive": true,
         "Responded": false
       },
@@ -592,7 +545,6 @@
         "Company": "Benvia",
         "Created": "2020-10-12",
         "DateApplied": null,
-        "Notes": "2",
         "IsActive": true,
         "Responded": false
       },
@@ -603,7 +555,6 @@
         "Company": "Microsoft",
         "Created": "2020-04-25",
         "DateApplied": null,
-        "Notes": "3",
         "IsActive": true,
         "Responded": false
       },
@@ -614,7 +565,6 @@
         "Company": "Google",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "4",
         "IsActive": true,
         "Responded": false
       },
@@ -625,7 +575,6 @@
         "Company": "Microsoft",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "5",
         "IsActive": true,
         "Responded": false
       },
@@ -636,7 +585,6 @@
         "Company": "Google",
         "Created": "2020-10-25",
         "DateApplied": null,
-        "Notes": "6",
         "IsActive": true,
         "Responded": false
       },
@@ -647,7 +595,6 @@
         "Company": "Google",
         "Created": "2020-09-28",
         "DateApplied": null,
-        "Notes": "7",
         "IsActive": true,
         "Responded": false
       },
@@ -658,7 +605,6 @@
         "Company": "Cloud 9",
         "Created": "2020-09-25",
         "DateApplied": null,
-        "Notes": "8",
         "IsActive": true,
         "Responded": false
       },
@@ -669,7 +615,6 @@
         "Company": "Net App",
         "Created": "2020-10-01",
         "DateApplied": null,
-        "Notes": "9",
         "IsActive": true,
         "Responded": false
       },
@@ -680,7 +625,6 @@
         "Company": "Cloud 9",
         "Created": "2020-10-02",
         "DateApplied": null,
-        "Notes": "10",
         "IsActive": true,
         "Responded": false
       },
@@ -691,7 +635,6 @@
         "Company": "Net App",
         "Created": "2020-10-02",
         "DateApplied": null,
-        "Notes": "11",
         "IsActive": true,
         "Responded": false
       },
@@ -702,7 +645,6 @@
         "Company": "Cloud 9",
         "Created": "2020-10-12",
         "DateApplied": null,
-        "Notes": "12",
         "IsActive": true,
         "Responded": false
       },
@@ -713,7 +655,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-11",
         "DateApplied": null,
-        "Notes": "13",
         "IsActive": true,
         "Responded": false
       },
@@ -724,7 +665,6 @@
         "Company": "Net App",
         "Created": "2020-10-21",
         "DateApplied": null,
-        "Notes": "14",
         "IsActive": true,
         "Responded": false
       },
@@ -735,7 +675,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-22",
         "DateApplied": null,
-        "Notes": "15",
         "IsActive": true,
         "Responded": false
       },
@@ -746,7 +685,6 @@
         "Company": "Staffing Company",
         "Created": "2020-10-13",
         "DateApplied": null,
-        "Notes": "16",
         "IsActive": true,
         "Responded": false
       },
@@ -757,7 +695,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-25",
         "DateApplied": null,
-        "Notes": "17",
         "IsActive": true,
         "Responded": false
       },
@@ -768,7 +705,6 @@
         "Company": "Microsoft",
         "Created": "2020-10-15",
         "DateApplied": null,
-        "Notes": "18",
         "IsActive": true,
         "Responded": false
       },
@@ -779,7 +715,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-15",
         "DateApplied": null,
-        "Notes": "19",
         "IsActive": true,
         "Responded": false
       },
@@ -790,7 +725,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-14",
         "DateApplied": null,
-        "Notes": "20",
         "IsActive": false,
         "Responded": false
       },
@@ -801,7 +735,6 @@
         "Company": "Sweetwater",
         "Created": "2020-10-18",
         "DateApplied": null,
-        "Notes": "21",
         "IsActive": false,
         "Responded": false
       },
@@ -812,7 +745,6 @@
         "Company": "Tesla",
         "Created": "2020-10-10",
         "DateApplied": null,
-        "Notes": "22",
         "IsActive": false,
         "Responded": false
       },
@@ -823,7 +755,6 @@
         "Company": "Tesla",
         "Created": "2020-10-30",
         "DateApplied": null,
-        "Notes": "23",
         "IsActive": false,
         "Responded": false
       }

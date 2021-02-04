@@ -10,9 +10,9 @@ namespace API.Data
     }
 
     public DbSet<AppUser> Users { get; set; }
-
     public DbSet<Job> Jobs { get; set; }
     public DbSet<Message> Messages { get; set; }
+    public DbSet<Note> Notes { get; set;}
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

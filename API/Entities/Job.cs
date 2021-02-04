@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Entities
@@ -13,7 +14,7 @@ namespace API.Entities
     public string Company { get; set; }
     public DateTime Created { get; set; } = DateTime.Now;
     public DateTime? DateApplied { get; set; }
-    public string Notes { get; set; }
+    public ICollection<Note> Notes { get; set; }
     public bool IsActive { get; set; } = true;
     public bool Responded { get; set; } = false;
     public AppUser AppUser { get; set; }
