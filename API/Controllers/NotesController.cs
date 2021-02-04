@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.DTOs;
 using API.Entities;
@@ -17,6 +18,13 @@ namespace API.Controllers
     {
       _userRepository = userRepository;
       _noteRepository = noteRepository;
+    }
+
+    [HttpGet("{jobId}")]
+    public async Task<ActionResult<IEnumerable<NoteDto>>> GetJobNotes(int jobId)
+    {
+      var notes = await _noteRepository.GetJobNotesAsync(jobId);
+      return Ok(notes);
     }
 
     [HttpPost]

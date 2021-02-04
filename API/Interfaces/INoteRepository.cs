@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using API.DTOs;
 using API.Entities;
 
 namespace API.Interfaces
@@ -9,7 +10,7 @@ namespace API.Interfaces
         void AddNote(Note note);
         void DeleteNote(Note note);
         Task<Note> GetNote(int id);
-        Task<IEnumerable<Note>> GetJobNotes(Job jobId);
+        Task<IEnumerable<NoteDto>> GetJobNotesAsync(int jobId);
         Task<bool> SaveAllAsync();
         
     }
