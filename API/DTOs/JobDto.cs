@@ -10,7 +10,6 @@ namespace API.DTOs
     public string Description { get; set; }
     public string Company { get; set; }
     public DateTime Created { get; set; }
-    public string Notes { get; set; }
     public bool IsActive { get; set; } = true;    
   }
 }
