@@ -11,17 +11,27 @@ import { Note } from '../_models/note';
 export class NoteService {
   baseUrl = environment.apiUrl;
   notes: Note[] = [];
+  jobId = -1;
 
   constructor(private http: HttpClient) { }
 
   getNotes(jobId: number) {
-    if(this.notes.length > 0){
+    if(this.jobId == jobId) {
+      // I already have the notes for this jobId cached in notes[]
       return of(this.notes);
-    }  
+    }
     
+    // I don't have the notes for this jobId.
+    this.jobId = jobId;
     return this.http.get<Note[]>(this.baseUrl + 'notes/' + jobId).pipe(
       tap(r => {
-        this.notes = r;
+        console.log("note array: ", r);
+        if(r.length > 0){
+          this.notes = r;
+        } else {
+          this.notes = [];
+        }
+        
       })
     ) 
   }

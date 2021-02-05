@@ -11,9 +11,11 @@
         <p> {{job.company}}</p>
         <strong>Description:</strong>
         <p> {{job.description}}</p>
-        <strong>Notes:</strong><br>
-        <div *ngFor="let note of notes">
-          <p class="ml-2"><span class="mr-2">{{note.created | date:'dd MMM yyyy'}} -</span>{{note.content}}</p>
+        <div *ngIf="notes?.length > 0">
+          <strong>Notes:</strong><br>
+          <div *ngFor="let note of notes">
+            <p class="ml-2"><span class="mr-2">{{note.created | date:'dd MMM yyyy'}} -</span>{{note.content}}</p>
+          </div>
         </div>
       </div>
       <div class="card-footer">

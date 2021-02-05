@@ -24,6 +24,7 @@ export class JobDetailComponent implements OnInit {
 
   loadJob() {
     this.jobService.getJob(Number(this.route.snapshot.paramMap.get('id'))).subscribe(job => {
+        console.log("job id: ", job.id);
         this.job = job;
         this.noteService.getNotes(job.id).subscribe(n => this.notes = n);
       });
