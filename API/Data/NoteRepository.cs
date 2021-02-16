@@ -34,6 +34,7 @@ namespace API.Data
     {      
       return await _context.Note
         .Where(n => n.JobId == jobId)
+        .OrderByDescending(n => n.Created)
         .ProjectTo<NoteDto>(_mapper.ConfigurationProvider)
         .ToListAsync();
     }
