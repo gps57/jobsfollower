@@ -34,6 +34,8 @@ import { SeekerProfileComponent } from './seekers/seeker-profile/seeker-profile.
 import { MessageDetailComponent } from './messages/message-detail/message-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobStatsComponent } from './dashboard/job-stats/job-stats.component';
+import { NoteModalComponent } from './modals/note-modal/note-modal.component';
+import { NotesListComponent } from './notes-list/notes-list.component';
 
 // this decorator says that this file is an Angular module
 @NgModule({
@@ -61,7 +63,9 @@ import { JobStatsComponent } from './dashboard/job-stats/job-stats.component';
     SeekerProfileComponent,
     MessageDetailComponent,
     DashboardComponent,
-    JobStatsComponent
+    JobStatsComponent,
+    NoteModalComponent,
+    NotesListComponent
   ],
   imports: [
     BrowserModule,
