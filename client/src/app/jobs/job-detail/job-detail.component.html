@@ -1,25 +1,30 @@
-<div class="row" *ngIf="job">
-  <div class="col-10">
+<div class="row" *ngIf="job$ | async as job">
+  <div class="col-12">
     <div class="card border-primary mb-3">
       <div class="card-header">
-        <h2>{{job.title}}</h2>
+        <h2>{{job.title}} Details</h2>
       </div>
       <div class="card-body">
-        <strong>On list since:</strong>
-        <p> {{job.created | date:'dd MMM yyyy'}}</p>
-        <strong>Company:</strong>
-        <p> {{job.company}}</p>
-        <strong>Description:</strong>
-        <p> {{job.description}}</p>
-        <div *ngIf="notes?.length > 0">
-          <strong>Notes:</strong><br>
-          <div *ngFor="let note of notes">
-            <p class="ml-2"><span class="mr-2">{{note.created | date:'dd MMM yyyy'}} -</span>{{note.content}}</p>
+        <div class="row">
+          <div class="col-3">
+            <div class="card bg-light p-3">
+              <strong>On list since:</strong>
+              <p> {{job.created | date:'dd MMM yyyy'}}</p>
+              <strong>Company:</strong>
+              <p> {{job.company}}</p>
+              <strong>Description:</strong>
+              <p> {{job.description}}</p>
+            </div>
+          </div>
+          <div class="col-9">
+            <app-notes-list [jobId]="jobId" [notes]="notes$ | async" (newNoteEvent)="loadNotes()">
+
+            </app-notes-list>
           </div>
         </div>
-      </div>
+      </div>  
       <div class="card-footer">
-        <a class="button btn btn-primary mr-3" target="_blank" href={{job.url}}>Go To Job Posting</a>
+        <a class="button btn btn-primary mr-1" target="_blank" href={{job.url}}>Go To Job Posting</a>
         <button routerLink='/jobs' class="btn btn-secondary">Back to Jobs</button>
       </div>
     </div>

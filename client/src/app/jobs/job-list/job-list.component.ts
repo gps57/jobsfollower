@@ -1,7 +1,6 @@
 import { createDirective } from '@angular/compiler/src/core';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { EventEmitter } from 'events';
 import { Observable } from 'rxjs';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { Job } from 'src/app/_models/job';
@@ -47,13 +46,6 @@ export class JobListComponent implements OnInit {
     this.updateStats();
   }
 
-  // setStatsParams() {
-  //   // this.statsParams.totalJobs = this.pagination.totalItems;
-
-  //   console.log("calling updateStats")
-  //   this.updateStats();
-  // }
-
   updateStats() {
     this.statsChange.emit(this.jobsStats);
   }
@@ -64,6 +56,7 @@ export class JobListComponent implements OnInit {
   }
 
   jobDetails(id: number){
+    this.jobService.prepJobDetails(id);
     this.router.navigateByUrl('/jobs/' + id);
   }
 

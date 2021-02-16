@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { combineLatest, Observable, of } from 'rxjs';
+import { map, shareReplay, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Job } from '../_models/job';
 import { JobParams } from '../_models/jobParams';
 import { JobsStats } from '../_models/jobsStats';
+import { NoteService } from './note.service';
 import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
 
 @Injectable({
@@ -19,8 +20,10 @@ export class JobsService {
   jobsStats: JobsStats;
   jobCache = new Map();
   jobsDisplayAsList: boolean = true;
+  jobId: number;
+  job$: Observable<Job>;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private notesService: NoteService) {
     this.jobParams = new JobParams(this.pageSize);
   }
 
@@ -34,6 +37,13 @@ export class JobsService {
 
   setJobParams(params: JobParams) {
     this.jobParams = params;
+  }
+
+  prepJobDetails(jobId: number) {
+    this.jobId = jobId;
+    console.log("in prepJobDetails calling notesService.setJobId, jobId is ", jobId);
+    this.notesService.setJobId(jobId);
+    this.job$ = this.http.get<Job>(this.baseUrl + 'jobs/' + this.jobId);
   }
 
   resetJobParams() {
@@ -84,6 +94,9 @@ export class JobsService {
   }
 
   getJob(jobId: number) {
+    console.log("in jobsService.getJob. jobId is: " + jobId);
+    this.jobId = jobId;
+
     const job = [...this.jobCache.values()]
       .reduce((arr, elem) => arr.concat(elem.result), [])
       .find((job: Job) => job.id === jobId);
@@ -99,6 +112,7 @@ export class JobsService {
     return this.http.put(this.baseUrl + 'jobs/update/' + job.id, job).pipe(
       map(() => {
         const index = this.jobs.indexOf(job);
+        shareReplay(1);
         this.jobs[index] = job;
       })
     )
