@@ -5,9 +5,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JobPaginationComponent } from './job-pagination/job-pagination.component';
 import { JobsDashboardComponent } from './jobs-dashboard/jobs-dashboard.component';
 import { JobsStatsComponent } from './jobs-stats/jobs-stats.component';
+import { JobsFiltersComponent } from './jobs-filters/jobs-filters.component';
 
 @NgModule({
-  declarations: [JobListComponent, JobPaginationComponent, JobsDashboardComponent, JobsStatsComponent],
+  declarations: [JobListComponent, JobPaginationComponent, JobsDashboardComponent, JobsStatsComponent, JobsFiltersComponent],
   exports: [JobListComponent],
   imports: [
       CommonModule,
