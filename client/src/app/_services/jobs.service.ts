@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { map, shareReplay, tap } from 'rxjs/operators';
@@ -13,6 +13,8 @@ import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
   providedIn: 'root'
 })
 export class JobsService {
+  job$: Observable<Job>;
+
   baseUrl = environment.apiUrl;
   pageSize = environment.defaultListPageSize;
   jobs: Job[] = [];
@@ -21,10 +23,19 @@ export class JobsService {
   jobCache = new Map();
   jobsDisplayAsList: boolean = true;
   jobId: number;
-  job$: Observable<Job>;
+
+  allJobs$: Observable<Job[]> = this.http.get<Job[]>(this.baseUrl + 'jobs/all')
+  .pipe(
+    // tap(x => console.log("All Jobs: ", JSON.stringify(x))),
+    shareReplay(1)
+  );
+
 
   constructor(private http: HttpClient, private notesService: NoteService) {
+    // this.getAllJobs();
+    // this.allJobs$.subscribe();
     this.jobParams = new JobParams(this.pageSize);
+
   }
 
   getJobParams() {
@@ -67,6 +78,8 @@ export class JobsService {
     this.jobsStats = jStats;
   }
 
+  // this method only returns one page of jobs, not the entire list of jobs in the database.
+  // it utilizes the pagination features to accomplish this.
   getJobs(jobParams: JobParams) {
     var response = this.jobCache.get(Object.values(jobParams).join('-'));
 
@@ -91,6 +104,22 @@ export class JobsService {
         this.jobCache.set(Object.values(jobParams).join('-'), response);
         return response;
       }))
+  }
+
+  buildParams(): HttpParams {
+    let jPs = new JobParams();
+
+    let params = getPaginationHeaders(jPs.pageNumber, jPs.pageSize);
+    if (jPs.company != null){
+      params = params.append('company', jPs.company.toString());
+    }
+
+    if (jPs.title != null) {
+      params = params.append('title', jPs.title.toString());
+    }
+
+    params = params.append('orderBy', jPs.orderBy);
+    return params;
   }
 
   getJob(jobId: number) {

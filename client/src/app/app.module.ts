@@ -9,7 +9,8 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { JobListComponent } from './jobs/job-list/job-list.component';
+import { JobsModule } from './jobs/jobs.module';
+// import { JobListComponent } from './jobs/job-list/job-list.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesListComponent } from './messages/messages-list/messages-list.component';
@@ -44,7 +45,7 @@ import { NotesListComponent } from './notes-list/notes-list.component';
     NavComponent,
     HomeComponent,
     RegisterComponent,
-    JobListComponent,
+    // JobListComponent,
     JobDetailComponent,
     ListsComponent,
     MessagesListComponent,
@@ -75,7 +76,8 @@ import { NotesListComponent } from './notes-list/notes-list.component';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    JobsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

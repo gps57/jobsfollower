@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { JobAddComponent } from './jobs/job-add/job-add.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { JobEditComponent } from './jobs/job-edit/job-edit.component';
+import { JobsDashboardComponent } from './jobs/jobs-dashboard/jobs-dashboard.component';
 import { JobsComponent } from './jobs/jobs/jobs.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessageDetailComponent } from './messages/message-detail/message-detail.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
       {path: 'job/add', component: JobAddComponent, pathMatch: 'full'},
       {path: 'job/edit/:id', component: JobEditComponent, canDeactivate: [PreventUnsavedChangesGuard], pathMatch: 'full'},
       {path: 'seeker/edit', component: SeekerEditComponent, canDeactivate: [PreventUnsavedChangesGuard], pathMatch: 'full'},
-      {path: 'lists', component: ListsComponent},
+      {path: 'test', component: JobsDashboardComponent},
       {path: 'messages', component: MessagesListComponent},
       {path: 'messages/:id', component: MessageDetailComponent},
     ]
