@@ -35,6 +35,13 @@ namespace API.Controllers
         return Ok(jobs);
     }
 
+    [HttpGet]
+    [Route("all")]
+    public async Task<ActionResult<IEnumerable<JobDto>>> GetAllJobs()
+    {
+      return await _jobRepository.GetAllJobsAsync();
+    }
+
     [HttpGet("{jobId}")]
     public async Task<ActionResult<JobDto>> GetJob(int jobId)
     {

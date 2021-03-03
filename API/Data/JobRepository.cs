@@ -83,6 +83,11 @@ namespace API.Data
         );
     }
 
+    public async Task<List<JobDto>> GetAllJobsAsync()
+    {
+      return await _context.Jobs.ProjectTo<JobDto>(_mapper.ConfigurationProvider).ToListAsync();
+    }
+
     public Task<JobDto> GetUserJobAsync(string username, int jobId)
     {
       throw new System.NotImplementedException();

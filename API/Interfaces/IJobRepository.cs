@@ -11,6 +11,7 @@ namespace API.Interfaces
         void Update(Job job);
         Task<bool> SaveAllAsync();
         Task<PagedList<JobDto>> GetJobsAsync(JobParams jobParams);
+        Task<List<JobDto>> GetAllJobsAsync();
         Task<Job> GetJobAsync(int jobId);
         Task<JobDto> GetJobDtoAsync(int jobId);
         Task<JobDto> GetUserJobAsync(string username, int jobId);
