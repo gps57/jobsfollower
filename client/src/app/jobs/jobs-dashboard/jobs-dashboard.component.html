@@ -1,2 +1,20 @@
 
-<app-jobs-stats [jobsStats]="jobsStats$ | async"></app-jobs-stats>
+<app-jobs-stats class="mb-3" [jobsStats]="jobsStats$ | async"></app-jobs-stats>
+<div class="card mt-3">
+
+  <!-- card-header -->
+  <div class="card-header">  
+    <app-jobs-filters (jParamsChange)="updateFilters($event)"></app-jobs-filters>
+  </div>
+  <!-- /card-header -->
+
+  <!-- card-body -->
+  <div class="card-body">
+  </div>
+  
+  <!-- card-footer -->
+  <div class="card-footer">
+  </div>
+  <!-- /card-footer -->
+
+</div>
