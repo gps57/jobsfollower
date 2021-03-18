@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { Job } from 'src/app/_models/job';
 import { JobParams } from 'src/app/_models/jobParams';
 import { JobsStats } from 'src/app/_models/jobsStats';
+import { PaginatedResult } from 'src/app/_models/pagination';
 import { JobsStore } from '../jobs.store';
 
 @Component({
@@ -11,9 +14,11 @@ import { JobsStore } from '../jobs.store';
 })
 export class JobsDashboardComponent implements OnInit {
   jobsStats$: Observable<JobsStats>;
+  paginatedJobs$: Observable<PaginatedResult<Job[]>>;
 
   constructor(private jobsStore: JobsStore) {
     this.jobsStats$ = this.jobsStore.jobsStats$;
+    this.paginatedJobs$ = this.jobsStore.pagenatedResult$;
   }
 
   ngOnInit(): void {

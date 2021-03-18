@@ -3,7 +3,7 @@
     [boundaryLinks]="true"
     [totalItems]="pagination.totalItems"
     [itemsPerPage]="pagination.itemsPerPage"
-    [(ngModel)]="pagination.currentPage"
+    [(ngModel)]="currentPage"
     (pageChanged)="pageChanged($event)"
     previousText="&lsaquo;"
     nextText="&rsaquo;"
@@ -11,3 +11,4 @@
     lastText="&raquo;">
   </pagination>
 </div>
+<p>pagination: {{pagination.totalItems}}, {{pagination.currentPage}}, {{pagination.itemsPerPage}}, {{pagination.totalPages}}</p>

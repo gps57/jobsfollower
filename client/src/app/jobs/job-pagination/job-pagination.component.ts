@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pagination } from 'src/app/_models/pagination';
 import { JobsStore } from '../jobs.store';
 
@@ -8,18 +8,19 @@ import { JobsStore } from '../jobs.store';
   styleUrls: ['./job-pagination.component.css']
 })
 export class JobPaginationComponent implements OnInit {
-  pagination: Pagination;
+  @Input() pagination: Pagination;
+  jobsPagination: Pagination;
+  currentPage: number = 1;
 
   constructor(private jobsStore: JobsStore) {
-    this.pagination = {
-      currentPage: 1,
-      itemsPerPage: 5,
-      totalItems: 60,
-      totalPages: 12
-    }
+    this.jobsPagination = this.pagination;
   }
 
   ngOnInit(): void {
+  }
+
+  pageChanged(event: any){
+    console.log("PageChanged: ", event);
   }
 
 }
